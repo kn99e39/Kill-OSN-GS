@@ -1,0 +1,12 @@
+{
+  "schema": "structural-experiment/upstream-file-fingerprints/v1",
+  "reference_commit": "0da46f2569b484986d3737d97213428db962161f",
+  "algorithm": "sha256",
+  "files": {
+    "environment.yml": "6ccf44149751b87147d45f5bbff7c64e2260419560a7ebd49ab4527d87872c69",
+    "requirements.txt": "b696e9721df95fdcca8d1fdbd853e554924f528dba8fcb2c25316c6dedb889dd",
+    "run_lascomp_text_condition_single.py": "2b4d3a2345963b56428a6a6bc3f891b1716691e57b4b4337aa1f03306786d685",
+    "trellis/pipelines/samplers/flow_euler.py": "1bafa6dd6de56edac07fd4147e0449d0550a0aa0532ae4cd6b85ea094cec01f0"
+  },
+  "purpose": "Identity checks for the official environment and the inspected execution path; not a substitute for the Git commit lock."
+}

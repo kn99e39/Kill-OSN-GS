@@ -1,0 +1,36 @@
+{
+  "schema": "structural-experiment/reference-lock/v1",
+  "reference_model": "LaS-Comp",
+  "repository_url": "https://github.com/DavidYan2001/LaS-Comp",
+  "checkout_date": "2026-09-10",
+  "commit_sha": "0da46f2569b484986d3737d97213428db962161f",
+  "commit_date": "2026-07-17T17:29:22+08:00",
+  "remote": "https://github.com/DavidYan2001/LaS-Comp.git",
+  "working_tree": "clean",
+  "submodules": [],
+  "license": {
+    "status": "not_found_in_upstream_checkout",
+    "note": "No LICENSE file was present at the frozen commit. Confirm upstream terms before distribution."
+  },
+  "official_requirements": {
+    "python": "3.10",
+    "cuda": "12.1",
+    "pytorch": "2.4.0+cu121",
+    "torchvision": "0.19.0",
+    "environment_file": "upstream/environment.yml",
+    "requirements_file": "upstream/requirements.txt"
+  },
+  "official_external_dependencies": [
+    "TRELLIS image-large and text-xlarge checkpoints",
+    "CLIP checkpoint loaded by TRELLIS",
+    "spconv-cu121",
+    "flash-attn",
+    "nvdiffrast",
+    "diff-gaussian-rasterization"
+  ],
+  "checkpoint_status": "not_acquired",
+  "dataset_status": "not_acquired",
+  "upstream_packaged_test_material": "No usable sample data: ckpt/ and samples/ each contain only a 2-byte placeholder file named '1'.",
+  "deviations": [],
+  "provenance_freeze_note": "Do not git pull, alter, or install research instrumentation in upstream/."
+}

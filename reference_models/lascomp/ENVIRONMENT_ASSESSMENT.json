@@ -1,0 +1,36 @@
+{
+  "schema": "structural-experiment/environment-assessment/v1",
+  "collected_date": "2026-09-10",
+  "os": {
+    "name": "Microsoft Windows 11 Pro",
+    "version": "10.0.26200",
+    "build": "26200"
+  },
+  "gpu": {
+    "model": "NVIDIA GeForce RTX 5080",
+    "vram_mib": 16303,
+    "driver": "596.49",
+    "driver_reported_cuda": "13.2",
+    "nvcc": "13.3.33"
+  },
+  "system_ram_bytes": 68304138240,
+  "disk": {
+    "C_free_bytes": 762549760000,
+    "D_free_bytes": 1036006502400
+  },
+  "python": {
+    "launcher_default": "Python 3.14.3",
+    "official_python_3_10_available": false,
+    "conda_on_path": false
+  },
+  "compatibility": {
+    "official_environment_reproduced": false,
+    "assessment": "incompatible_without_a_deviation",
+    "reasons": [
+      "Official README specifies CUDA 12.1 and warns that CUDA 12.3+ may fail in spconv, flash-attn, or rendering modules; this host reports CUDA 13.2/13.3.",
+      "The official lock lists Linux-local file URLs for selected dependencies and a Linux conda prefix, so it is not a portable Windows lockfile.",
+      "Python 3.10 and Conda are not available on PATH."
+    ],
+    "decision": "No replacement framework, package version, checkpoint, or compatibility patch was introduced."
+  }
+}

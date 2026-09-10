@@ -1,0 +1,5 @@
+[project]
+name = "structural-experiment-substrate"
+version = "0.1.0"
+description = "Frozen-artifact and control-invariant infrastructure for 3D completion experiments"
+requires-python = ">=3.10"
