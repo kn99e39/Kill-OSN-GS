@@ -1,0 +1,90 @@
+{
+  "schema": "lascomp-checkpoint-provenance/v1",
+  "captured_on": "2026-09-10",
+  "status": "IDENTIFIED_NOT_ACQUIRED",
+  "source_chain": {
+    "lascomp_repository": "https://github.com/DavidYan2001/LaS-Comp.git",
+    "lascomp_commit": "0da46f2569b484986d3737d97213428db962161f",
+    "lascomp_instruction": "The official README directs users to obtain TRELLIS image-large, text-xlarge, and clip assets.",
+    "frozen_entry_point": "run_lascomp_text_condition_single.py",
+    "frozen_default_checkpoint_path": "./ckpt/ckpt_text_xlarge"
+  },
+  "runtime_resolution": {
+    "text_pipeline_repository": "microsoft/TRELLIS-text-xlarge",
+    "text_pipeline_revision": "e0b00432b8e3a8ecee0df806ab1df9f7281f2be4",
+    "text_pipeline_manifest": "pipeline.json",
+    "shared_decoder_repository_runtime_string": "JeffreyXiang/TRELLIS-image-large",
+    "shared_decoder_repository_alias": "microsoft/TRELLIS-image-large",
+    "shared_decoder_revision": "25e0d31ffbebe4b5a97464dd851910efc3002d96",
+    "text_conditioner_repository": "openai/clip-vit-large-patch14",
+    "text_conditioner_revision": "32bd64288804d66eefd0ccbe215aa642df71cc41",
+    "resolution_note": "The pinned official text pipeline explicitly names JeffreyXiang/TRELLIS-image-large for shared decoders. Its current revision and files equal the Microsoft alias, but a pristine runtime must retain the pipeline's literal repository string rather than rewrite pipeline.json."
+  },
+  "required_weight_files": [
+    {
+      "role": "text sparse-structure flow",
+      "repository": "microsoft/TRELLIS-text-xlarge",
+      "revision": "e0b00432b8e3a8ecee0df806ab1df9f7281f2be4",
+      "filename": "ckpts/ss_flow_txt_dit_XL_16l8_fp16.safetensors",
+      "size_bytes": 1976327512,
+      "source_declared_sha256": "154317b61e89f97270a1d34cfee52c1ce1d07c831f533b5c878a3a0e991dfc05",
+      "downloaded_sha256": null
+    },
+    {
+      "role": "text structured-latent flow",
+      "repository": "microsoft/TRELLIS-text-xlarge",
+      "revision": "e0b00432b8e3a8ecee0df806ab1df9f7281f2be4",
+      "filename": "ckpts/slat_flow_txt_dit_XL_64l8p2_fp16.safetensors",
+      "size_bytes": 2151142688,
+      "source_declared_sha256": "4819e388063d58f3a7f0939836ec435fed262cd8a0565226ce8e43da1bbfa55e",
+      "downloaded_sha256": null
+    },
+    {
+      "role": "shared sparse-structure decoder",
+      "repository": "JeffreyXiang/TRELLIS-image-large",
+      "revision": "25e0d31ffbebe4b5a97464dd851910efc3002d96",
+      "filename": "ckpts/ss_dec_conv3d_16l8_fp16.safetensors",
+      "size_bytes": 147591972,
+      "source_declared_sha256": "1c76d4a40519aa2d711cc263a8404105231ac26db31d946bed48b84fee79009a",
+      "downloaded_sha256": null
+    },
+    {
+      "role": "shared mesh decoder",
+      "repository": "JeffreyXiang/TRELLIS-image-large",
+      "revision": "25e0d31ffbebe4b5a97464dd851910efc3002d96",
+      "filename": "ckpts/slat_dec_mesh_swin8_B_64l8m256c_fp16.safetensors",
+      "size_bytes": 181903412,
+      "source_declared_sha256": "3e87aba94b5786407eb06d0502c1ed0885a0027a3f2b8537bfe15b0a92c01859",
+      "downloaded_sha256": null
+    },
+    {
+      "role": "shared Gaussian decoder",
+      "repository": "JeffreyXiang/TRELLIS-image-large",
+      "revision": "25e0d31ffbebe4b5a97464dd851910efc3002d96",
+      "filename": "ckpts/slat_dec_gs_swin8_B_64l8gs32_fp16.safetensors",
+      "size_bytes": 171450952,
+      "source_declared_sha256": "38c84bcef5ce0af1f48b1b5558dabc7575a13346043c41a7e0610f1fa619a161",
+      "downloaded_sha256": null
+    },
+    {
+      "role": "shared radiance-field decoder",
+      "repository": "JeffreyXiang/TRELLIS-image-large",
+      "revision": "25e0d31ffbebe4b5a97464dd851910efc3002d96",
+      "filename": "ckpts/slat_dec_rf_swin8_B_64l8r16_fp16.safetensors",
+      "size_bytes": 171450488,
+      "source_declared_sha256": "737da6578d01948016b7c39786113af0d64a46f7922f6b8b5e698b84643be514",
+      "downloaded_sha256": null
+    },
+    {
+      "role": "CLIP text encoder",
+      "repository": "openai/clip-vit-large-patch14",
+      "revision": "32bd64288804d66eefd0ccbe215aa642df71cc41",
+      "filename": "model.safetensors",
+      "size_bytes": 1710540580,
+      "source_declared_sha256": "a2bf730a0c7debf160f7a6b50b3aaf3703e7e88ac73de7a314903141db026dcb",
+      "downloaded_sha256": null,
+      "required_companions": ["config.json", "merges.txt", "special_tokens_map.json", "tokenizer.json", "tokenizer_config.json", "vocab.json"]
+    }
+  ],
+  "acquisition_gate": "Do not download or load these weights until the dependency-resolution gate supplies a portable, version-pinned environment. At acquisition, download by listed repository/revision, verify every downloaded SHA-256 against source_declared_sha256, and preserve the repository-specific layout without editing pipeline.json."
+}
