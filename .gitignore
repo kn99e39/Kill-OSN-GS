@@ -1,0 +1,6 @@
+# Local reference-model checkout; source identity is recorded by commit SHA and blob hashes.
+reference_models/lascomp/upstream/
+
+# Python execution by-products.
+__pycache__/
+*.py[cod]

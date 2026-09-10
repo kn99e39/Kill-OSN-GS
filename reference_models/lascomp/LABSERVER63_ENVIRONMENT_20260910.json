@@ -1,0 +1,37 @@
+{
+  "schema": "lascomp-environment-assessment/v2",
+  "host_alias": "LabServer63",
+  "captured_on": "2026-09-10",
+  "platform": {
+    "hostname": "63",
+    "os": "Ubuntu 24.04.3 LTS",
+    "system_python": "3.12.3",
+    "memory": "125 GiB total; 121 GiB available",
+    "home_filesystem": "11 TB total; approximately 9.7 TB available"
+  },
+  "gpu": {
+    "name": "NVIDIA GeForce RTX 3080 Ti",
+    "memory_mib": 12288,
+    "driver": "595.71.05",
+    "driver_reported_cuda": "13.2",
+    "system_cuda_toolkit": null
+  },
+  "reference_source": {
+    "repository": "https://github.com/DavidYan2001/LaS-Comp.git",
+    "commit": "0da46f2569b484986d3737d97213428db962161f",
+    "state": "detached, clean after deterministic checkout",
+    "bootstrap": "reference_models/lascomp/bootstrap_reference.sh"
+  },
+  "isolated_runtime": {
+    "manager": "Miniforge 26.7.2-0",
+    "manager_prefix": "/home/nd/.local/miniforge3",
+    "environment_prefix": "/home/nd/.local/conda-envs/lascomp-py310-cu121",
+    "python": "3.10",
+    "pytorch": "2.4.0+cu121",
+    "torchvision": "0.19.0+cu121",
+    "torch_cuda": "12.1",
+    "gpu_import_verified": true,
+    "installation_note": "The official PyTorch CUDA 12.1 wheels were used after the vendor Conda build raised libtorch_cpu.so:iJIT_NotifyEvent with MKL 2025.0. No source, model version, checkpoint, or sampling change was made."
+  },
+  "readiness_scope": "Compute/runtime compatibility only. LaS-Comp dependencies, official checkpoints, pristine reproduction, trace instrumentation, and causal suitability remain unverified."
+}
