@@ -1,0 +1,205 @@
+{
+  "schema": "structural-experiment/reference-model-selection/v1",
+  "captured_on": "2026-09-11",
+  "scope": "Selection only. No candidate repository was cloned, no environment or checkpoint was installed or downloaded, and Experiment 1 was not run.",
+  "lascomp_status": {
+    "pristine_historical_reproduction": "BLOCKED_PRE_INFERENCE",
+    "functional_method_reproduction": "FUNCTIONAL_REPRODUCTION_FAILED",
+    "runtime_o_g_suitability": "NOT_ADJUDICATED",
+    "modifiable_in_this_batch": false
+  },
+  "selection_criteria": {
+    "A": "Public source, documented checkpoint path, environment, and runnable author workflow.",
+    "B": "A generated geometry artifact G can be materialized and frozen.",
+    "C": "Observed geometry O and generated geometry G remain independently identifiable at the experimental boundary; G=F(O) is allowed.",
+    "D": "An external, fixed multi-region partition can be applied to the frozen geometry.",
+    "E": "An author-designated ground-truth/evaluation subset exists.",
+    "F": "Frozen O/G can be reused for baseline, plausible-wrong, and oracle-A variants without regenerating them.",
+    "G": "Scientific relevance and structural complexity are sufficient for the structural-association experiment."
+  },
+  "labserver63": {
+    "gpu": "NVIDIA GeForce RTX 3080 Ti",
+    "memory_mib": 12288,
+    "driver": "595.71.05"
+  },
+  "candidates": [
+    {
+      "name": "3D-Fixer",
+      "repository": "https://github.com/HorizonRobotics/3D-Fixer",
+      "revision": "f6a60328b4646389b4dd4b2ecea9df31bab9a9bd",
+      "paper": "https://arxiv.org/abs/2604.04406",
+      "checkpoint": "https://huggingface.co/HorizonRobotics/3D-Fixer",
+      "license": "Apache-2.0 for repository code; third-party notices apply",
+      "source_pipeline": {
+        "O": "MoGe-derived visible scene/instance depth projected to scene.ply and instance_est_depth_<id>.ply before pipeline.run.",
+        "G": "In-place conditioned Gaussian/mesh output from pipeline.run, exported as objects/<id>.glb.",
+        "freeze_point": "Persist O PLYs and the exported GLB after a fixed seed, prior to any external partition or association operation.",
+        "fused_identity": "The completion pipeline consumes the instance geometry condition internally; its generated mesh is materialized only at the output boundary.",
+        "region_access": "PLY and GLB are externally readable; the source itself makes per-instance masks and PLYs."
+      },
+      "official_evaluation": "ARSG-110K test assets with object/scene metrics scripts including IoU, Chamfer, precision, recall, and F1.",
+      "environment": "Linux; Python >=3.8; CUDA 11.8 or 12.8; setup.sh builds TRELLIS-derived CUDA components.",
+      "vrm_note": "Official prerequisite is an NVIDIA GPU with at least 24GB; only RTX 4090 and L20 are stated as verified.",
+      "classification": {
+        "PUBLIC_REPRODUCIBILITY": "STRONG",
+        "G_MATERIALIZATION": "CLEAR",
+        "O_G_SEPARABILITY": "PARTIAL",
+        "REGION_ACCESSIBILITY": "STRONG",
+        "GT_EVALUATION_SUPPORT": "STRONG",
+        "HARDWARE_FEASIBILITY": "WEAK",
+        "EXPERIMENT_1_CAUSAL_SUITABILITY": "PARTIAL"
+      },
+      "selection": "NOT_SELECTED",
+      "risk": "The published 24GB minimum exceeds LabServer63's 12GB GPU; do not attempt an unsupported installation in this selection batch."
+    },
+    {
+      "name": "World Tracing",
+      "repository": "https://github.com/haoz19/world-tracing",
+      "revision": "00335499389f10f25ceea39e1cda82fa4b9719cd",
+      "paper": "https://arxiv.org/abs/2606.13652",
+      "checkpoints": [
+        "https://huggingface.co/haoz19/object-model-6layer",
+        "https://huggingface.co/haoz19/scene-model-6layer-840",
+        "https://huggingface.co/haoz19/dynamic-model-16frame"
+      ],
+      "license": "CC BY-NC-ND 4.0; non-commercial research use, no derivatives may be redistributed",
+      "source_pipeline": {
+        "O": "An RGB/RGBA image, not an independently supplied observed geometry artifact.",
+        "G": "A predicted multilayer XYZ tensor logged as a .rrd visualization artifact; optional TRELLIS.2 stages 2/3 convert XYZ-derived voxels to GLB.",
+        "freeze_point": "The per-layer xyz_pred is produced after diffusion, but the author quickstart exposes a .rrd rather than a canonical O/G pair.",
+        "fused_identity": "Visible and occluded geometry are produced together as one layered prediction from image pixels.",
+        "region_access": "XYZ is available in the inference result and can be rendered/exported, but the default release artifact is .rrd and no official GT geometry benchmark workflow is provided."
+      },
+      "official_evaluation": "Packaged demo images and checkpoints; no author GT completion benchmark/evaluator found in the inference-only release.",
+      "environment": "Python >=3.10, Linux, CUDA 12; optional GLB path adds TRELLIS.2.",
+      "vrm_note": "Tested on 80GB A100/H100; authors state smaller GPUs can use fewer steps or resolution, without a 12GB validation.",
+      "classification": {
+        "PUBLIC_REPRODUCIBILITY": "STRONG",
+        "G_MATERIALIZATION": "CLEAR",
+        "O_G_SEPARABILITY": "WEAK",
+        "REGION_ACCESSIBILITY": "PARTIAL",
+        "GT_EVALUATION_SUPPORT": "WEAK",
+        "HARDWARE_FEASIBILITY": "PARTIAL",
+        "EXPERIMENT_1_CAUSAL_SUITABILITY": "WEAK"
+      },
+      "selection": "NOT_SELECTED",
+      "risk": "Treating a derived layer-0 depth map as O would introduce a new, non-author experimental boundary, so this candidate is not a valid substitute for the required O/G causal test."
+    },
+    {
+      "name": "PGNet (Completion-by-Correction)",
+      "repository": "https://github.com/RobWonn/PGNet",
+      "revision": "cd2b368e960d6e733259c0c9f78c4ea7b91f9480",
+      "paper": "https://doi.org/10.1609/aaai.v40i9.37710",
+      "prior_dataset": "https://huggingface.co/datasets/Wang131/ShapeNetViPC-Gen",
+      "license": "Apache-2.0",
+      "source_pipeline": {
+        "O": "ShapeNetViPC-Partial/<category>/<object>/<view>.dat partial point cloud.",
+        "G": "ShapeNetViPC-Gen/trellis/<sampling>/num_points_<N>/<category>/<object>/<view>.pt prior point cloud, pre-generated from a rendered view with TRELLIS.",
+        "freeze_point": "Before PGNet forward: hash and freeze the .dat O and .pt G. The official evaluator loads them independently and calls model(gen_pc, partial_pc).",
+        "fused_identity": "PGNet's correction stage fuses distinct generative-prior and partial-observation features; the final fine point cloud is separate from frozen inputs.",
+        "region_access": "Both boundary artifacts are coordinate point clouds, so a deterministic external multi-region partition can operate without altering PGNet."
+      },
+      "official_evaluation": "ShapeNetViPC test list with partial, generated-prior, GT, and view data; inference.py reports Chamfer-L2, F-score at 0.001, and EMD.",
+      "environment": "Ubuntu 24.04; Python 3.10; PyTorch 2.4.0 with CUDA 12.1; PointNet++, Vox2Seq, Chamfer, and EMD CUDA extensions.",
+      "checkpoint_status": "A path for a trained .pth is required by the official evaluator, but no author-controlled PGNet trained-checkpoint download was found in the README, repository, releases, or author-linked Hugging Face material inspected on 2026-09-11.",
+      "vrm_note": "Officially tested on RTX 4090 only; no memory minimum or 12GB validation is claimed.",
+      "classification": {
+        "PUBLIC_REPRODUCIBILITY": "PARTIAL",
+        "G_MATERIALIZATION": "CLEAR",
+        "O_G_SEPARABILITY": "STRONG",
+        "REGION_ACCESSIBILITY": "STRONG",
+        "GT_EVALUATION_SUPPORT": "STRONG",
+        "HARDWARE_FEASIBILITY": "PARTIAL",
+        "EXPERIMENT_1_CAUSAL_SUITABILITY": "STRONG"
+      },
+      "selection": "PRIMARY_PENDING_CHECKPOINT_GATE",
+      "risk": "No checkpoint must be substituted with self-training, a third-party weight, or a modified model. Its absence rejects this primary before environment construction."
+    },
+    {
+      "name": "GenPC",
+      "repository": "https://github.com/liannuaa/GenPC",
+      "revision": "bac9e7b59f4fea0eaaa936f24ef60f342f349829",
+      "paper": "https://openaccess.thecvf.com/content/CVPR2025/html/Li_GenPC_Zero-shot_Point_Cloud_Completion_via_3D_Generative_Priors_CVPR_2025_paper.html",
+      "upstream_models": [
+        "https://github.com/microsoft/TRELLIS.2",
+        "https://huggingface.co/nunchaku-ai/nunchaku-qwen-image-edit-2509"
+      ],
+      "license": "MIT",
+      "source_pipeline": {
+        "O": "Input partial point cloud data/<id>.ply.",
+        "G": "Generator-derived geometry and the fused result under workspace/<id>/; configuration requests saving intermediate files and evaluation reads workspace/<id>/<id>_fused.ply.",
+        "freeze_point": "A valid future gate would have to inventory and hash the first generator-only point/mesh artifact before ScaleAdapter fusion; the current README does not name that artifact contract.",
+        "fused_identity": "Depth prompting bridges O to image generation and an image-to-3D prior; scale/pose registration then geometrically fuses the prior back to O.",
+        "region_access": "The fused PLY is externally accessible; generator-only output naming and a stable partition boundary require source inspection after a pristine checkout."
+      },
+      "official_evaluation": "Repository evaluates fused PLY against data/GT/<id>.ply with CD and EMD, but the README does not package a canonical public test split or sample bundle.",
+      "environment": "Python 3.10, CUDA >=12, PyTorch 2.6/cu126, compiled Chamfer/EMD, Kaolin, PyTorch3D, Nunchaku, TRELLIS.2.",
+      "vrm_note": "No author VRAM minimum; README warns of a memory leak between its two stages.",
+      "classification": {
+        "PUBLIC_REPRODUCIBILITY": "PARTIAL",
+        "G_MATERIALIZATION": "POSSIBLE",
+        "O_G_SEPARABILITY": "PARTIAL",
+        "REGION_ACCESSIBILITY": "PARTIAL",
+        "GT_EVALUATION_SUPPORT": "PARTIAL",
+        "HARDWARE_FEASIBILITY": "PARTIAL",
+        "EXPERIMENT_1_CAUSAL_SUITABILITY": "PARTIAL"
+      },
+      "selection": "FALLBACK_NOT_INSTALLED",
+      "risk": "The direct prior/fusion design is relevant, but a multi-upstream CUDA stack, undocumented 12GB requirement, no packaged canonical sample split, and unstated generator-only freeze contract keep it below PGNet."
+    },
+    {
+      "name": "Point-based Instance Completion with Scene Constraints",
+      "repository": "https://github.com/wkhademi/point_based_instance_completion",
+      "revision": "a36e38f8a0a4983d11cbafa793b753a491638170",
+      "paper": "https://openreview.net/forum?id=llSiIJosDj",
+      "checkpoints": "Author Box links for object-pretrained and ScanWCF scene-completion checkpoints.",
+      "license": "AGPL-3.0",
+      "source_pipeline": {
+        "O": "Instance-segmented partial scan plus sparse scene/free/occluded-space constraint point clouds.",
+        "G": "A direct predicted completion/reconstructed mesh after cross-attention with scene constraints.",
+        "freeze_point": "Final completions/reconstructions can be saved and visualized, but the release does not expose an independently generated prior G before its fusion network.",
+        "fused_identity": "Partial observation and scene constraints are fused through cross-attention before direct completion.",
+        "region_access": "Completion and reconstruction paths support external mesh/point processing."
+      },
+      "official_evaluation": "ScanWCF supports CD, IoU, LFD, PCR, and scene-completion evaluation, but its dataset requires a terms-of-use request and omits licensed ShapeNet meshes.",
+      "environment": "Conda environment plus NKSR torch-2.0.0+cu118 wheel and PointNet++ operators.",
+      "vrm_note": "No author VRAM requirement stated.",
+      "classification": {
+        "PUBLIC_REPRODUCIBILITY": "PARTIAL",
+        "G_MATERIALIZATION": "CLEAR",
+        "O_G_SEPARABILITY": "WEAK",
+        "REGION_ACCESSIBILITY": "STRONG",
+        "GT_EVALUATION_SUPPORT": "PARTIAL",
+        "HARDWARE_FEASIBILITY": "PARTIAL",
+        "EXPERIMENT_1_CAUSAL_SUITABILITY": "PARTIAL"
+      },
+      "selection": "NOT_SELECTED",
+      "risk": "It is a strong scene-completion baseline but not a clean pre-fusion generated-G reference, and data access is not immediately public."
+    }
+  ],
+  "decision": {
+    "primary": "PGNet (Completion-by-Correction)",
+    "fallback": "GenPC",
+    "fallback_installation_authorized": false,
+    "rationale": "PGNet alone exposes a pre-generated point-cloud G and a partial geometric O as distinct on-disk inputs to the official evaluator, with official GT metrics. This matches the causal boundary before convenience. The missing author checkpoint and unverified 12GB runtime are explicit pre-install hard gates, not waived assumptions."
+  },
+  "primary_next_gate": {
+    "name": "PGNet checkpoint-and-single-sample functional-reproduction gate",
+    "installation_authorized_in_this_batch": false,
+    "revision_strategy": "If and only if checkpoint availability passes, create a new immutable upstream checkout at cd2b368e960d6e733259c0c9f78c4ea7b91f9480 under a new PGNet-specific reference directory; retain it unmodified and record recursive/submodule state.",
+    "checkpoint_gate": "Locate an author-controlled downloadable PGNet category checkpoint matching the exact source/configuration; record URL, revision or file hash, size, and license. Do not train, use a third-party checkpoint, or infer a checkpoint from reported numbers.",
+    "environment_gate": "After checkpoint success only, construct a fresh isolated Python 3.10/PyTorch 2.4 CUDA 12.1 environment, compile the four official extensions, and prove imports and model load on the RTX 3080 Ti before any inference.",
+    "official_sample_gate": "Use one fixed official ShapeNetViPC test-list entry in a stated category, preserving partial .dat, generated-prior .pt, GT .dat, view data, config, seed, coordinate normalization, and all hashes.",
+    "expected_boundary": "Freeze O=.dat and G=.pt before model(gen_pc, partial_pc); save the unmodified fine output outside the pristine upstream checkout. No region partition or association operation occurs at this gate.",
+    "evaluation_gate": "Run the author evaluator's Chamfer-L2, F-score threshold 0.001, and EMD on the same frozen official sample only after a successful forward pass.",
+    "success_condition": "Exact source revision, author checkpoint provenance, extension imports, model load, one official sample forward pass without OOM, frozen O/G hashes, a baseline output, and official metrics all exist.",
+    "stop_conditions": [
+      "No author-controlled trained PGNet checkpoint is available or its provenance cannot be verified.",
+      "Official ShapeNetViPC data/prior file layout cannot supply one complete O/G/GT sample.",
+      "Exact environment or extension build fails, model load is incompatible, or the RTX 3080 Ti exhausts memory on the documented single-sample path.",
+      "The source cannot preserve an independent G artifact and O artifact at the stated boundary."
+    ],
+    "on_stop": "Classify PGNet as rejected at its named gate, preserve all evidence, do not install the fallback in the same batch, and do not run Experiment 1."
+  },
+  "experiment_1_readiness": "NOT_READY"
+}
