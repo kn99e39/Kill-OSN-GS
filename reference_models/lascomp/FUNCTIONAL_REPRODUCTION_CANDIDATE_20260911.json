@@ -1,0 +1,128 @@
+{
+  "schema": "lascomp-functional-reproduction-candidate/v1",
+  "captured_on": "2026-09-11",
+  "candidate_name": "FUNCTIONAL_REPRODUCTION_CANDIDATE",
+  "scope": "Non-pristine functional-method reproduction only; no Experiment 1, O-influence tracing, or G-suitability adjudication.",
+  "source": {
+    "repository": "https://github.com/DavidYan2001/LaS-Comp.git",
+    "commit": "0da46f2569b484986d3737d97213428db962161f",
+    "entry_point": "run_lascomp_text_condition_single.py",
+    "source_modified": false
+  },
+  "host": {
+    "name": "LabServer63",
+    "gpu": "NVIDIA GeForce RTX 3080 Ti",
+    "gpu_memory_mib": 12288,
+    "python": "3.10.21",
+    "torch": "2.4.0+cu121",
+    "torchvision": "0.19.0+cu121"
+  },
+  "functional_environment": {
+    "path": "/home/nd/.local/conda-envs/lascomp-functional-cu121",
+    "compiler": {
+      "cuda_nvcc": "12.1.105",
+      "cuda_cudart": "12.1.105",
+      "cuda_cccl": "12.1.109",
+      "gcc": "11.4.0",
+      "gxx": "11.4.0",
+      "additional_cuda_development_libraries": {
+        "libcusparse": "12.1.0.106",
+        "libcusparse_dev": "12.1.0.106",
+        "libcublas": "12.1.3.1",
+        "libcublas_dev": "12.1.3.1",
+        "libcusolver": "11.4.5.107",
+        "libcusolver_dev": "11.4.5.107"
+      }
+    },
+    "required_for_import_or_load": [
+      "numpy==1.26.4",
+      "open3d==0.19.0",
+      "trimesh==4.11.5",
+      "plyfile==1.1.2",
+      "easydict==1.13",
+      "huggingface-hub==0.34.4",
+      "safetensors==0.6.2",
+      "transformers==4.55.2",
+      "spconv-cu121==2.3.8",
+      "cumm-cu121==0.7.11",
+      "xformers==0.0.27.post2",
+      "kaolin==0.18.0",
+      "utils3d==0.0.2",
+      "pytorch3d==0.7.8",
+      "pygltflib==1.16.2",
+      "warp-lang==1.8.1",
+      "rembg==2.0.67",
+      "onnxruntime==1.22.1"
+    ],
+    "pinned_sources": {
+      "xformers": "Official author-listed 0.0.27.post2 wheel, SHA-256 7d4bd4876559fdc3cccbcaea717d3a28ca7f2fb09ab84cac3d859449ba247830",
+      "kaolin": "Official author-listed 0.18.0 wheel, SHA-256 843901d2132a91a3ea6790ebd805a3ca1afa74a5373b2bab252ac629ba056410",
+      "utils3d": "https://github.com/EasternJournalist/utils3d.git@9a4eb15e4021b67b12c460c7057d642626897ec8",
+      "pytorch3d": "https://github.com/facebookresearch/pytorch3d.git@75ebeeaea0908c5527e7b1e305fbc7681382db47; locally built wheel SHA-256 1e02adbdd9ef09b66e553f266fb59a38d70f88b157a05f7e21cec0229634f15d"
+    }
+  },
+  "dependency_classification": {
+    "required_for_inference": [
+      "torch, torchvision, xformers, spconv-cu121/cumm-cu121",
+      "kaolin plus pygltflib and warp-lang due to Kaolin top-level import",
+      "pytorch3d due to flow_euler -> point_mesh_dist and default optimization_step=1",
+      "open3d, trimesh, plyfile, numpy",
+      "huggingface-hub, safetensors, transformers, CLIP",
+      "rembg and onnxruntime because trellis.pipelines imports the image pipeline package"
+    ],
+    "transitively_required": [
+      "dataclasses-json, marshmallow, typing-inspect, mypy-extensions, deprecated, wrapt from pygltflib",
+      "coloredlogs, humanfriendly, flatbuffers, protobuf from onnxruntime"
+    ],
+    "training_only": [
+      "chamfer_3D", "emd", "tensorboardX", "torch-geometric", "dataset and trainer-only utilities"
+    ],
+    "tooling_or_visualization_only": [
+      "ipycanvas", "ipyevents", "jupyter-client", "tornado", "usd-core", "Kaolin notebook visualization"
+    ],
+    "unused_or_unreached": [
+      "flash_attn because the source fixes ATTN_BACKEND=xformers",
+      "nvdiffrast, diffoctreerast, and MIP-splatting diff-gaussian-rasterization; no import/load path reached any of them before the source/configuration blocker"
+    ],
+    "unresolved_historical_provenance": [
+      "Sixteen author file:// Conda/build workspace records remain without immutable artifact identities.",
+      "nvdiffrast, diffoctreerast, and MIP-splatting diff-gaussian-rasterization remain author-unpinned. No functional substitute was selected because they were not reached."
+    ]
+  },
+  "checkpoint_verification": {
+    "text_pipeline_revision": "e0b00432b8e3a8ecee0df806ab1df9f7281f2be4",
+    "shared_decoder_revision": "25e0d31ffbebe4b5a97464dd851910efc3002d96",
+    "clip_revision": "32bd64288804d66eefd0ccbe215aa642df71cc41",
+    "verified_weight_hashes": {
+      "ss_flow_txt_dit_XL_16l8_fp16.safetensors": "154317b61e89f97270a1d34cfee52c1ce1d07c831f533b5c878a3a0e991dfc05",
+      "slat_flow_txt_dit_XL_64l8p2_fp16.safetensors": "4819e388063d58f3a7f0939836ec435fed262cd8a0565226ce8e43da1bbfa55e",
+      "ss_dec_conv3d_16l8_fp16.safetensors": "1c76d4a40519aa2d711cc263a8404105231ac26db31d946bed48b84fee79009a",
+      "slat_dec_mesh_swin8_B_64l8m256c_fp16.safetensors": "3e87aba94b5786407eb06d0502c1ed0885a0027a3f2b8537bfe15b0a92c01859",
+      "slat_dec_gs_swin8_B_64l8gs32_fp16.safetensors": "38c84bcef5ce0af1f48b1b5558dabc7575a13346043c41a7e0610f1fa619a161",
+      "slat_dec_rf_swin8_B_64l8r16_fp16.safetensors": "737da6578d01948016b7c39786113af0d64a46f7922f6b8b5e698b84643be514",
+      "model.safetensors": "a2bf730a0c7debf160f7a6b50b3aaf3703e7e88ac73de7a314903141db026dcb"
+    }
+  },
+  "minimal_run": {
+    "dataset_repository": "DavidYan2001/Omni-Comp3D",
+    "dataset_revision": "9943b8b62106f0781b0b6809e30a00439a20672a",
+    "input": "Omni-Comp3D/ycb_preprocessed/003/partial_data/single_scan/partial_0.ply",
+    "author_benchmark_prompt": "A cracker box",
+    "configuration": "Entry-point defaults retained: seed=1, sparse denoise steps=100, slat steps=25, cfg_strength=1.0, cfg_interval=[0.5,1.0], rescale_t=3.0, alpha_eta=0.1, optimization_step=1, lr_sample=1e-5, mesh_points=16384.",
+    "result": "No sparse structure, mesh, or points were materialized. Only source preprocessing artifacts input_sample.ply and prompt.txt were created."
+  },
+  "first_semantic_blocker": {
+    "location": "trellis/pipelines/trellis_text_to_3d.py::lascomp_sample_sparse_structure",
+    "required_key": "sparse_structure_encoder",
+    "evidence": "The fixed pipeline.json model map contains sparse_structure_decoder, sparse_structure_flow_model, slat_decoder_gs, slat_decoder_rf, slat_decoder_mesh, and slat_flow_model, but no sparse_structure_encoder. Pipeline.from_pretrained constructs self.models exclusively from that map.",
+    "consequence": "The official run_lascomp path deterministically accesses an absent model key after checkpoint loading. Adding an encoder/checkpoint or changing that source path would change the released method/configuration.",
+    "load_probe": "Official checkpoints loaded and pipeline.cuda() completed successfully before this blocked inference path."
+  },
+  "classification": "FUNCTIONAL_REPRODUCTION_FAILED",
+  "next_step_authorization": {
+    "o_influence_tracing": false,
+    "candidate_g_inventory": false,
+    "g_suitability_adjudication": false,
+    "experiment_1": false
+  }
+}
