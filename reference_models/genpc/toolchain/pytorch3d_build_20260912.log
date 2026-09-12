@@ -1,0 +1,139 @@
+**********************************************************************
+** Visual Studio 2022 Developer Command Prompt v17.14.35
+** Copyright (c) 2025 Microsoft Corporation
+**********************************************************************
+C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\bin\nvcc.exe
+C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.3\bin\nvcc.exe
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2025 NVIDIA Corporation
+Built on Wed_Jan_15_19:38:46_Pacific_Standard_Time_2025
+Cuda compilation tools, release 12.8, V12.8.61
+Build cuda_12.8.r12.8/compiler.35404655_0
+C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.44.35207\bin\Hostx64\x64\cl.exe
+Processing .\.
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: pytorch3d
+  Building wheel for pytorch3d (pyproject.toml): started
+  Building wheel for pytorch3d (pyproject.toml): finished with status 'error'
+  error: subprocess-exited-with-error
+  
+  Building wheel for pytorch3d (pyproject.toml) did not run successfully.
+  exit code: 1
+  
+  [105 lines of output]
+  C:\Projects\Kill-OSN-GS\reference_models\genpc\env-blackwell\Lib\site-packages\wheel\bdist_wheel.py:4: FutureWarning: The 'wheel' package is no longer the canonical location of the 'bdist_wheel' command, and will be removed in a future release. Please update to setuptools v70.1 or later which contains an integrated version of this command.
+    warn(
+  running bdist_wheel
+  running build
+  running build_py
+  running build_ext
+  W0912 21:27:52.679000 12792 Lib\site-packages\torch\utils\cpp_extension.py:466] Error checking compiler version for cl: 'cp1' codec can't decode bytes in position 0--1: No mapping for the Unicode character exists in the target code page.
+  building 'pytorch3d._C' extension
+  W0912 21:27:52.703000 12792 Lib\site-packages\torch\utils\cpp_extension.py:466] Error checking compiler version for cl: 'cp1' codec can't decode bytes in position 0--1: No mapping for the Unicode character exists in the target code page.
+  [1/38] C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\bin\nvcc --generate-dependencies-with-compile --dependency-output C:\Projects\Kill-OSN-GS\reference_models\genpc\dependencies\pytorch3d\build\temp.win-amd64-cpython-311\Release\Projects\Kill-OSN-GS\reference_models\genpc\dependencies\pytorch3d\pytorch3d\csrc\pulsar\gpu\renderer.backward.gpu.obj.d -std=c++17 -Xcompiler /MD -Xcompiler /wd4819 -Xcompiler /wd4251 -Xcompiler /wd4244 -Xcompiler /wd4267 -Xcompiler /wd4275 -Xcompiler /wd4018 -Xcompiler /wd4190 -Xcompiler /wd4624 -Xcompiler /wd4067 -Xcompiler /wd4068 -Xcompiler /EHsc --use-local-env -Xcudafe --diag_suppress=base_class_has_different_dll_interface -Xcudafe --diag_suppress=field_without_dll_interface -Xcudafe --diag_suppress=dll_interface_conflict_none_assumed -Xcudafe --diag_suppress=dll_interface_conflict_dllexport_assumed -DWITH_CUDA -DTHRUST_IGNORE_CUB_VERSION_CHECK -IC:\Projects\Kill-OSN-GS\reference_models\genpc\dependencies\pytorch3d\pytorch3d\csrc -IC:\Projects\Kill-OSN-GS\reference_models\genpc\dependencies\cub -IC:\Projects\Kill-OSN-GS\reference_models\genpc\env-blackwell\Lib\site-packages\torch\include -IC:\Projects\Kill-OSN-GS\reference_models\genpc\env-blackwell\Lib\site-packages\torch\include\torch\csrc\api\include "-IC:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\include" -IC:\Projects\Kill-OSN-GS\reference_models\genpc\env-blackwell\include -IC:\Users\dna10\AppData\Local\Programs\Python\Python311\include -IC:\Users\dna10\AppData\Local\Programs\Python\Python311\Include "-IC:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.44.35207\include" "-IC:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Auxiliary\VS\include" "-IC:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt" "-IC:\Program Files (x86)\Windows Kits\10\\include\10.0.26100.0\\um" "-IC:\Program Files (x86)\Windows Kits\10\\include\10.0.26100.0\\shared" "-IC:\Program Files (x86)\Windows Kits\10\\include\10.0.26100.0\\winrt" "-IC:\Program Files (x86)\Windows Kits\10\\include\10.0.26100.0\\cppwinrt" "-IC:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um" -c C:\Projects\Kill-OSN-GS\reference_models\genpc\dependencies\pytorch3d\pytorch3d\csrc\pulsar\gpu\renderer.backward.gpu.cu -o C:\Projects\Kill-OSN-GS\reference_models\genpc\dependencies\pytorch3d\build\temp.win-amd64-cpython-311\Release\Projects\Kill-OSN-GS\reference_models\genpc\dependencies\pytorch3d\pytorch3d\csrc\pulsar\gpu\renderer.backward.gpu.obj -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr -DCUDA_HAS_FP16=1 -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ -DTORCH_API_INCLUDE_EXTENSION_H -DTORCH_EXTENSION_NAME=_C -gencode=arch=compute_120,code=sm_120
+  FAILED: C:/Projects/Kill-OSN-GS/reference_models/genpc/dependencies/pytorch3d/build/temp.win-amd64-cpython-311/Release/Projects/Kill-OSN-GS/reference_models/genpc/dependencies/pytorch3d/pytorch3d/csrc/pulsar/gpu/renderer.backward.gpu.obj
+  C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\bin\nvcc --generate-dependencies-with-compile --dependency-output C:\Projects\Kill-OSN-GS\reference_models\genpc\dependencies\pytorch3d\build\temp.win-amd64-cpython-311\Release\Projects\Kill-OSN-GS\reference_models\genpc\dependencies\pytorch3d\pytorch3d\csrc\pulsar\gpu\renderer.backward.gpu.obj.d -std=c++17 -Xcompiler /MD -Xcompiler /wd4819 -Xcompiler /wd4251 -Xcompiler /wd4244 -Xcompiler /wd4267 -Xcompiler /wd4275 -Xcompiler /wd4018 -Xcompiler /wd4190 -Xcompiler /wd4624 -Xcompiler /wd4067 -Xcompiler /wd4068 -Xcompiler /EHsc --use-local-env -Xcudafe --diag_suppress=base_class_has_different_dll_interface -Xcudafe --diag_suppress=field_without_dll_interface -Xcudafe --diag_suppress=dll_interface_conflict_none_assumed -Xcudafe --diag_suppress=dll_interface_conflict_dllexport_assumed -DWITH_CUDA -DTHRUST_IGNORE_CUB_VERSION_CHECK -IC:\Projects\Kill-OSN-GS\reference_models\genpc\dependencies\pytorch3d\pytorch3d\csrc -IC:\Projects\Kill-OSN-GS\reference_models\genpc\dependencies\cub -IC:\Projects\Kill-OSN-GS\reference_models\genpc\env-blackwell\Lib\site-packages\torch\include -IC:\Projects\Kill-OSN-GS\reference_models\genpc\env-blackwell\Lib\site-packages\torch\include\torch\csrc\api\include "-IC:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\include" -IC:\Projects\Kill-OSN-GS\reference_models\genpc\env-blackwell\include -IC:\Users\dna10\AppData\Local\Programs\Python\Python311\include -IC:\Users\dna10\AppData\Local\Programs\Python\Python311\Include "-IC:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.44.35207\include" "-IC:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Auxiliary\VS\include" "-IC:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt" "-IC:\Program Files (x86)\Windows Kits\10\\include\10.0.26100.0\\um" "-IC:\Program Files (x86)\Windows Kits\10\\include\10.0.26100.0\\shared" "-IC:\Program Files (x86)\Windows Kits\10\\include\10.0.26100.0\\winrt" "-IC:\Program Files (x86)\Windows Kits\10\\include\10.0.26100.0\\cppwinrt" "-IC:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um" -c C:\Projects\Kill-OSN-GS\reference_models\genpc\dependencies\pytorch3d\pytorch3d\csrc\pulsar\gpu\renderer.backward.gpu.cu -o C:\Projects\Kill-OSN-GS\reference_models\genpc\dependencies\pytorch3d\build\temp.win-amd64-cpython-311\Release\Projects\Kill-OSN-GS\reference_models\genpc\dependencies\pytorch3d\pytorch3d\csrc\pulsar\gpu\renderer.backward.gpu.obj -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr -DCUDA_HAS_FP16=1 -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ -DTORCH_API_INCLUDE_EXTENSION_H -DTORCH_EXTENSION_NAME=_C -gencode=arch=compute_120,code=sm_120
+  C:\Projects\Kill-OSN-GS\reference_models\genpc\dependencies\cub\cub\device/device_adjacent_difference.cuh(38): fatal error C1083: 포함 파일을 열 수 없습니다. 'thrust/detail/cstdint.h': No such file or directory
+  
+  renderer.backward.gpu.cu
+  
+  [2/38] C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\bin\nvcc --generate-dependencies-with-compile --dependency-output C:\Projects\Kill-OSN-GS\reference_models\genpc\dependencies\pytorch3d\build\temp.win-amd64-cpython-311\Release\Projects\Kill-OSN-GS\reference_models\genpc\dependencies\pytorch3d\pytorch3d\csrc\pulsar\gpu\renderer.backward_dbg.gpu.obj.d -std=c++17 -Xcompiler /MD -Xcompiler /wd4819 -Xcompiler /wd4251 -Xcompiler /wd4244 -Xcompiler /wd4267 -Xcompiler /wd4275 -Xcompiler /wd4018 -Xcompiler /wd4190 -Xcompiler /wd4624 -Xcompiler /wd4067 -Xcompiler /wd4068 -Xcompiler /EHsc --use-local-env -Xcudafe --diag_suppress=base_class_has_different_dll_interface -Xcudafe --diag_suppress=field_without_dll_interface -Xcudafe --diag_suppress=dll_interface_conflict_none_assumed -Xcudafe --diag_suppress=dll_interface_conflict_dllexport_assumed -DWITH_CUDA -DTHRUST_IGNORE_CUB_VERSION_CHECK -IC:\Projects\Kill-OSN-GS\reference_models\genpc\dependencies\pytorch3d\pytorch3d\csrc -IC:\Projects\Kill-OSN-GS\reference_models\genpc\dependencies\cub -IC:\Projects\Kill-OSN-GS\reference_models\genpc\env-blackwell\Lib\site-packages\torch\include -IC:\Projects\Kill-OSN-GS\reference_models\genpc\env-blackwell\Lib\site-packages\torch\include\torch\csrc\api\include "-IC:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\include" -IC:\Projects\Kill-OSN-GS\reference_models\genpc\env-blackwell\include -IC:\Users\dna10\AppData\Local\Programs\Python\Python311\include -IC:\Users\dna10\AppData\Local\Programs\Python\Python311\Include "-IC:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.44.35207\include" "-IC:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Auxiliary\VS\include" "-IC:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt" "-IC:\Program Files (x86)\Windows Kits\10\\include\10.0.26100.0\\um" "-IC:\Program Files (x86)\Windows Kits\10\\include\10.0.26100.0\\shared" "-IC:\Program Files (x86)\Windows Kits\10\\include\10.0.26100.0\\winrt" "-IC:\Program Files (x86)\Windows Kits\10\\include\10.0.26100.0\\cppwinrt" "-IC:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um" -c C:\Projects\Kill-OSN-GS\reference_models\genpc\dependencies\pytorch3d\pytorch3d\csrc\pulsar\gpu\renderer.backward_dbg.gpu.cu -o C:\Projects\Kill-OSN-GS\reference_models\genpc\dependencies\pytorch3d\build\temp.win-amd64-cpython-311\Release\Projects\Kill-OSN-GS\reference_models\genpc\dependencies\pytorch3d\pytorch3d\csrc\pulsar\gpu\renderer.backward_dbg.gpu.obj -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr -DCUDA_HAS_FP16=1 -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ -DTORCH_API_INCLUDE_EXTENSION_H -DTORCH_EXTENSION_NAME=_C -gencode=arch=compute_120,code=sm_120
+  FAILED: C:/Projects/Kill-OSN-GS/reference_models/genpc/dependencies/pytorch3d/build/temp.win-amd64-cpython-311/Release/Projects/Kill-OSN-GS/reference_models/genpc/dependencies/pytorch3d/pytorch3d/csrc/pulsar/gpu/renderer.backward_dbg.gpu.obj
+  C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\bin\nvcc --generate-dependencies-with-compile --dependency-output C:\Projects\Kill-OSN-GS\reference_models\genpc\dependencies\pytorch3d\build\temp.win-amd64-cpython-311\Release\Projects\Kill-OSN-GS\reference_models\genpc\dependencies\pytorch3d\pytorch3d\csrc\pulsar\gpu\renderer.backward_dbg.gpu.obj.d -std=c++17 -Xcompiler /MD -Xcompiler /wd4819 -Xcompiler /wd4251 -Xcompiler /wd4244 -Xcompiler /wd4267 -Xcompiler /wd4275 -Xcompiler /wd4018 -Xcompiler /wd4190 -Xcompiler /wd4624 -Xcompiler /wd4067 -Xcompiler /wd4068 -Xcompiler /EHsc --use-local-env -Xcudafe --diag_suppress=base_class_has_different_dll_interface -Xcudafe --diag_suppress=field_without_dll_interface -Xcudafe --diag_suppress=dll_interface_conflict_none_assumed -Xcudafe --diag_suppress=dll_interface_conflict_dllexport_assumed -DWITH_CUDA -DTHRUST_IGNORE_CUB_VERSION_CHECK -IC:\Projects\Kill-OSN-GS\reference_models\genpc\dependencies\pytorch3d\pytorch3d\csrc -IC:\Projects\Kill-OSN-GS\reference_models\genpc\dependencies\cub -IC:\Projects\Kill-OSN-GS\reference_models\genpc\env-blackwell\Lib\site-packages\torch\include -IC:\Projects\Kill-OSN-GS\reference_models\genpc\env-blackwell\Lib\site-packages\torch\include\torch\csrc\api\include "-IC:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\include" -IC:\Projects\Kill-OSN-GS\reference_models\genpc\env-blackwell\include -IC:\Users\dna10\AppData\Local\Programs\Python\Python311\include -IC:\Users\dna10\AppData\Local\Programs\Python\Python311\Include "-IC:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.44.35207\include" "-IC:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Auxiliary\VS\include" "-IC:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt" "-IC:\Program Files (x86)\Windows Kits\10\\include\10.0.26100.0\\um" "-IC:\Program Files (x86)\Windows Kits\10\\include\10.0.26100.0\\shared" "-IC:\Program Files (x86)\Windows Kits\10\\include\10.0.26100.0\\winrt" "-IC:\Program Files (x86)\Windows Kits\10\\include\10.0.26100.0\\cppwinrt" "-IC:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um" -c C:\Projects\Kill-OSN-GS\reference_models\genpc\dependencies\pytorch3d\pytorch3d\csrc\pulsar\gpu\renderer.backward_dbg.gpu.cu -o C:\Projects\Kill-OSN-GS\reference_models\genpc\dependencies\pytorch3d\build\temp.win-amd64-cpython-311\Release\Projects\Kill-OSN-GS\reference_models\genpc\dependencies\pytorch3d\pytorch3d\csrc\pulsar\gpu\renderer.backward_dbg.gpu.obj -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr -DCUDA_HAS_FP16=1 -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ -DTORCH_API_INCLUDE_EXTENSION_H -DTORCH_EXTENSION_NAME=_C -gencode=arch=compute_120,code=sm_120
+  C:\Projects\Kill-OSN-GS\reference_models\genpc\dependencies\cub\cub\device/device_adjacent_difference.cuh(38): fatal error C1083: 포함 파일을 열 수 없습니다. 'thrust/detail/cstdint.h': No such file or directory
+  
+  renderer.backward_dbg.gpu.cu
+  
+  ninja: build stopped: subcommand failed.
+  Traceback (most recent call last):
+    File "C:\Projects\Kill-OSN-GS\reference_models\genpc\env-blackwell\Lib\site-packages\torch\utils\cpp_extension.py", line 2595, in _run_ninja_build
+      subprocess.run(
+    File "C:\Users\dna10\AppData\Local\Programs\Python\Python311\Lib\subprocess.py", line 571, in run
+      raise CalledProcessError(retcode, process.args,
+  subprocess.CalledProcessError: Command '['ninja', '-v', '-j', '2']' returned non-zero exit status 1.
+  
+  The above exception was the direct cause of the following exception:
+  
+  Traceback (most recent call last):
+    File "C:\Projects\Kill-OSN-GS\reference_models\genpc\env-blackwell\Lib\site-packages\pip\_vendor\pyproject_hooks\_in_process\_in_process.py", line 389, in <module>
+      main()
+    File "C:\Projects\Kill-OSN-GS\reference_models\genpc\env-blackwell\Lib\site-packages\pip\_vendor\pyproject_hooks\_in_process\_in_process.py", line 373, in main
+      json_out["return_val"] = hook(**hook_input["kwargs"])
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "C:\Projects\Kill-OSN-GS\reference_models\genpc\env-blackwell\Lib\site-packages\pip\_vendor\pyproject_hooks\_in_process\_in_process.py", line 280, in build_wheel
+      return _build_backend().build_wheel(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "C:\Projects\Kill-OSN-GS\reference_models\genpc\env-blackwell\Lib\site-packages\setuptools\build_meta.py", line 412, in build_wheel
+      return self._build_with_temp_dir(['bdist_wheel'], '.whl',
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "C:\Projects\Kill-OSN-GS\reference_models\genpc\env-blackwell\Lib\site-packages\setuptools\build_meta.py", line 397, in _build_with_temp_dir
+      self.run_setup()
+    File "C:\Projects\Kill-OSN-GS\reference_models\genpc\env-blackwell\Lib\site-packages\setuptools\build_meta.py", line 484, in run_setup
+      self).run_setup(setup_script=setup_script)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "C:\Projects\Kill-OSN-GS\reference_models\genpc\env-blackwell\Lib\site-packages\setuptools\build_meta.py", line 335, in run_setup
+      exec(code, locals())
+    File "<string>", line 171, in <module>
+    File "C:\Projects\Kill-OSN-GS\reference_models\genpc\env-blackwell\Lib\site-packages\setuptools\__init__.py", line 87, in setup
+      return distutils.core.setup(**attrs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "C:\Projects\Kill-OSN-GS\reference_models\genpc\env-blackwell\Lib\site-packages\setuptools\_distutils\core.py", line 185, in setup
+      return run_commands(dist)
+             ^^^^^^^^^^^^^^^^^^
+    File "C:\Projects\Kill-OSN-GS\reference_models\genpc\env-blackwell\Lib\site-packages\setuptools\_distutils\core.py", line 201, in run_commands
+      dist.run_commands()
+    File "C:\Projects\Kill-OSN-GS\reference_models\genpc\env-blackwell\Lib\site-packages\setuptools\_distutils\dist.py", line 968, in run_commands
+      self.run_command(cmd)
+    File "C:\Projects\Kill-OSN-GS\reference_models\genpc\env-blackwell\Lib\site-packages\setuptools\dist.py", line 1217, in run_command
+      super().run_command(command)
+    File "C:\Projects\Kill-OSN-GS\reference_models\genpc\env-blackwell\Lib\site-packages\setuptools\_distutils\dist.py", line 987, in run_command
+      cmd_obj.run()
+    File "C:\Projects\Kill-OSN-GS\reference_models\genpc\env-blackwell\Lib\site-packages\wheel\_bdist_wheel.py", line 390, in run
+      self.run_command("build")
+    File "C:\Projects\Kill-OSN-GS\reference_models\genpc\env-blackwell\Lib\site-packages\setuptools\_distutils\cmd.py", line 319, in run_command
+      self.distribution.run_command(command)
+    File "C:\Projects\Kill-OSN-GS\reference_models\genpc\env-blackwell\Lib\site-packages\setuptools\dist.py", line 1217, in run_command
+      super().run_command(command)
+    File "C:\Projects\Kill-OSN-GS\reference_models\genpc\env-blackwell\Lib\site-packages\setuptools\_distutils\dist.py", line 987, in run_command
+      cmd_obj.run()
+    File "C:\Projects\Kill-OSN-GS\reference_models\genpc\env-blackwell\Lib\site-packages\setuptools\_distutils\command\build.py", line 132, in run
+      self.run_command(cmd_name)
+    File "C:\Projects\Kill-OSN-GS\reference_models\genpc\env-blackwell\Lib\site-packages\setuptools\_distutils\cmd.py", line 319, in run_command
+      self.distribution.run_command(command)
+    File "C:\Projects\Kill-OSN-GS\reference_models\genpc\env-blackwell\Lib\site-packages\setuptools\dist.py", line 1217, in run_command
+      super().run_command(command)
+    File "C:\Projects\Kill-OSN-GS\reference_models\genpc\env-blackwell\Lib\site-packages\setuptools\_distutils\dist.py", line 987, in run_command
+      cmd_obj.run()
+    File "C:\Projects\Kill-OSN-GS\reference_models\genpc\env-blackwell\Lib\site-packages\setuptools\command\build_ext.py", line 84, in run
+      _build_ext.run(self)
+    File "C:\Projects\Kill-OSN-GS\reference_models\genpc\env-blackwell\Lib\site-packages\setuptools\_distutils\command\build_ext.py", line 346, in run
+      self.build_extensions()
+    File "C:\Projects\Kill-OSN-GS\reference_models\genpc\env-blackwell\Lib\site-packages\torch\utils\cpp_extension.py", line 1072, in build_extensions
+      build_ext.build_extensions(self)
+    File "C:\Projects\Kill-OSN-GS\reference_models\genpc\env-blackwell\Lib\site-packages\setuptools\_distutils\command\build_ext.py", line 466, in build_extensions
+      self._build_extensions_serial()
+    File "C:\Projects\Kill-OSN-GS\reference_models\genpc\env-blackwell\Lib\site-packages\setuptools\_distutils\command\build_ext.py", line 492, in _build_extensions_serial
+      self.build_extension(ext)
+    File "C:\Projects\Kill-OSN-GS\reference_models\genpc\env-blackwell\Lib\site-packages\setuptools\command\build_ext.py", line 246, in build_extension
+      _build_ext.build_extension(self, ext)
+    File "C:\Projects\Kill-OSN-GS\reference_models\genpc\env-blackwell\Lib\site-packages\setuptools\_distutils\command\build_ext.py", line 547, in build_extension
+      objects = self.compiler.compile(
+                ^^^^^^^^^^^^^^^^^^^^^^
+    File "C:\Projects\Kill-OSN-GS\reference_models\genpc\env-blackwell\Lib\site-packages\torch\utils\cpp_extension.py", line 1041, in win_wrap_ninja_compile
+      _write_ninja_file_and_compile_objects(
+    File "C:\Projects\Kill-OSN-GS\reference_models\genpc\env-blackwell\Lib\site-packages\torch\utils\cpp_extension.py", line 2227, in _write_ninja_file_and_compile_objects
+      _run_ninja_build(
+    File "C:\Projects\Kill-OSN-GS\reference_models\genpc\env-blackwell\Lib\site-packages\torch\utils\cpp_extension.py", line 2612, in _run_ninja_build
+      raise RuntimeError(message) from e
+  RuntimeError: Error compiling objects for extension
+  [end of output]
+  
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+  ERROR: Failed building wheel for pytorch3d
+Failed to build pytorch3d
+error: failed-wheel-build-for-install
+
+Failed to build installable wheels for some pyproject.toml based projects
+
+pytorch3d

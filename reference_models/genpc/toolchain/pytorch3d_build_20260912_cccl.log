@@ -1,0 +1,27 @@
+**********************************************************************
+** Visual Studio 2022 Developer Command Prompt v17.14.35
+** Copyright (c) 2025 Microsoft Corporation
+**********************************************************************
+C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8\bin\nvcc.exe
+C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v13.3\bin\nvcc.exe
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2025 NVIDIA Corporation
+Built on Wed_Jan_15_19:38:46_Pacific_Standard_Time_2025
+Cuda compilation tools, release 12.8, V12.8.61
+Build cuda_12.8.r12.8/compiler.35404655_0
+C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.44.35207\bin\Hostx64\x64\cl.exe
+Processing .\.
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: pytorch3d
+  Building wheel for pytorch3d (pyproject.toml): started
+  Building wheel for pytorch3d (pyproject.toml): still running...
+  Building wheel for pytorch3d (pyproject.toml): still running...
+  Building wheel for pytorch3d (pyproject.toml): still running...
+  Building wheel for pytorch3d (pyproject.toml): still running...
+  Building wheel for pytorch3d (pyproject.toml): finished with status 'done'
+  Created wheel for pytorch3d: filename=pytorch3d-0.7.9-cp311-cp311-win_amd64.whl size=3553375 sha256=9c3b0e0ed032d01926c94b9569ae50ea04a017d94a9d42281ce611fcbf457791
+  Stored in directory: C:\Users\dna10\AppData\Local\Temp\pip-ephem-wheel-cache-5xogtxbg\wheels\46\24\64\bda44fb62b4109aa11f8b16ec662d470faad4f2e452babf880
+Successfully built pytorch3d
+Installing collected packages: pytorch3d
+Successfully installed pytorch3d-0.7.9

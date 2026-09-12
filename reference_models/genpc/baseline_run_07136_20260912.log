@@ -1,0 +1,24 @@
+Seed set to 42
+Loaded compiled 3D CUDA chamfer distance
+{
+  "compatibility_shim": "injected_external_compat",
+  "diffusers_compatibility_shim": "injected_custom_pipeline_trust_remote_code",
+  "error": "OSError: You are trying to access a gated repo.\nMake sure to have access to it at https://huggingface.co/briaai/RMBG-2.0.\n401 Client Error. (Request ID: Root=1-6aa54ae5-6122e52f243f7d175ccd33b3;0049a44f-f322-40f5-bd09-a4a2090c4896)\n\nCannot access gated repo for url https://huggingface.co/briaai/RMBG-2.0/resolve/main/config.json.\nAccess to model briaai/RMBG-2.0 is restricted. You must have access to it and be authenticated to access it. Please log in.",
+  "finished_utc": "2026-09-12T12:51:50Z",
+  "ground_truth_sha256": "94c1d6e37ed3a282233d29882c45879b804902cf51a050a8859ed0d9f57ded72",
+  "input_sha256": "c39836b809caad0257323b47cbc29aba0da9d2d1ecc32a8d51c39edb84f021cc",
+  "manifest": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\METHOD_VALID_BASELINE_07136_20260912.json",
+  "official_upstream_commit": "bac9e7b59f4fea0eaaa936f24ef60f342f349829",
+  "resume_reason": "depth/controlnet completed; prior failure was before ScaleAdapter import",
+  "resumed_utc": "2026-09-12T12:51:44Z",
+  "run_id": "method_valid_baseline_07136_20260912",
+  "stages": {
+    "depth_prompting_and_controlnet": {
+      "peak_allocated_bytes": 12305552896,
+      "peak_reserved_bytes": 14770241536,
+      "status": "completed"
+    }
+  },
+  "started_utc": "2026-09-12T12:49:08Z",
+  "status": "failed"
+}

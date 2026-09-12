@@ -1,0 +1,61 @@
+{
+  "run_id": "method_valid_baseline_07136_20260912",
+  "sample": "07136",
+  "category": "sofa",
+  "exact_published_baseline": "BLOCKED",
+  "method_valid_substrate": "PREDECLARED",
+  "inpainting_classification": "PUBLISHED_INPAINTING_UNAVAILABLE",
+  "inpainting_deviation": "INPAINTING_COMPONENT_DEVIATION",
+  "entrypoint_fix": "ENTRYPOINT_ORCHESTRATION_FIX",
+  "run_selection_locked_before_execution": true,
+  "experiment1_run": false,
+  "seed": 42,
+  "device": "cuda",
+  "torch": "2.8.0+cu128",
+  "cuda_toolkit": "12.8",
+  "input": {
+    "path": "upstream/data/07136.ply",
+    "sha256": "c39836b809caad0257323b47cbc29aba0da9d2d1ecc32a8d51c39edb84f021cc"
+  },
+  "ground_truth": {
+    "path": "upstream/data/GT/07136.ply",
+    "sha256": "94c1d6e37ed3a282233d29882c45879b804902cf51a050a8859ed0d9f57ded72"
+  },
+  "published_path_overrides": {
+    "view_num": 2048,
+    "cam_res": 256,
+    "distance": 1.6,
+    "fovy": 49.1,
+    "point_size": 1,
+    "mask_pixel_rate": 3,
+    "res": 256,
+    "generate_res": 1024,
+    "inpainter": "cv2",
+    "control_model": "controlnet",
+    "generative_model": "instantmesh",
+    "rembg_model": "RMBG",
+    "dataset": "redwood",
+    "camera_distribution": "fibonacci_sphere",
+    "camera_base": "kaolin"
+  },
+  "author_call_parameters": {
+    "controlnet_conditioning_scale": 0.99,
+    "num_inference_steps": 30,
+    "instantmesh_diffusion_steps": 75,
+    "registration_cd_inv_weight": 0.5,
+    "registration_diff_init": true,
+    "registration_reg_fine_xyz": true,
+    "remove_close_points_distance_threshold": 0.0001
+  },
+  "external_orchestration_behavior": {
+    "depth_prompting": "call getDepth, then explicitly call author ControlNet generate and save img.png",
+    "reason": "upstream main.py calls getImage(..., img_gen=False) while ScaleAdapter downstream requires img.png",
+    "official_checkouts_untouched": true,
+    "compatibility_shims": [
+      "inject save_ply into official InstantMesh mesh_util API",
+      "enable trust_remote_code for official zero123plus custom pipeline under current diffusers"
+    ]
+  },
+  "output_root": "runs/baseline_07136",
+  "frozen_after_equivalence": false
+}
