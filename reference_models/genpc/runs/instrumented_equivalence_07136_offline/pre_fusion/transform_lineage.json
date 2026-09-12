@@ -1,0 +1,88 @@
+{
+  "boundary": "immediately before official reg_xyz.remove_close_points(source_pcd, target_pcd, distance_threshold=0.0001)",
+  "distance_threshold": 0.0001,
+  "hook_behavior": "read-only capture; original remove_close_points called with unchanged objects and arguments",
+  "matrices": {
+    "best_scales_transformation": null,
+    "best_transformation_xyz": null,
+    "coarse_transformation": null,
+    "diff_transform": null,
+    "inverse_diff_transform_at_boundary": null
+  },
+  "source_label": "O_aligned",
+  "source_pcd": {
+    "bytes": 2400940,
+    "color_max": [
+      0.8,
+      0.7098039215686275,
+      0.6549019607843137
+    ],
+    "color_min": [
+      0.011764705882352941,
+      0.011764705882352941,
+      0.00392156862745098
+    ],
+    "has_colors": true,
+    "path": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\instrumented_equivalence_07136_offline\\pre_fusion\\O_aligned.ply",
+    "point_count": 88916,
+    "sha256": "8679ebdd7f0917d6380d33bdf34b91d0e735f6b1576804660671f0e3d3a898a1",
+    "xyz_max": [
+      0.18053394698748212,
+      0.36481508570665355,
+      0.15539437392892774
+    ],
+    "xyz_min": [
+      -0.14957700964383772,
+      -0.2154326130250685,
+      -0.37147298250145055
+    ]
+  },
+  "source_semantics": [
+    "upstream color_point.ply point cloud",
+    "remove_noise_from_point_cloud",
+    "diff_transform applied",
+    "coarse_transformation applied for ICP search",
+    "inverse coarse transformation applied",
+    "inverse diff transformation applied",
+    "O_aligned captured"
+  ],
+  "target_label": "G_aligned",
+  "target_pcd": {
+    "bytes": 4423889,
+    "color_max": [
+      0.792156862745098,
+      0.6705882352941176,
+      0.611764705882353
+    ],
+    "color_min": [
+      0.027450980392156862,
+      0.027450980392156862,
+      0.03137254901960784
+    ],
+    "has_colors": true,
+    "path": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\instrumented_equivalence_07136_offline\\pre_fusion\\G_aligned.ply",
+    "point_count": 163840,
+    "sha256": "9f17bd05b27fa28235c8ca377cb11976595a547a8b34c788b534a7960391fbeb",
+    "xyz_max": [
+      0.30140490288064764,
+      0.3262576626936513,
+      0.2113210965837945
+    ],
+    "xyz_min": [
+      -0.1163928489364815,
+      -0.20720130131022763,
+      -0.2520911758494956
+    ]
+  },
+  "target_semantics": [
+    "InstantMesh GLB converted by glb2point",
+    "normalize_numpy(range=0.5)",
+    "InstantMesh x-axis +90 degree rotation",
+    "InstantMesh y-axis +90 degree rotation",
+    "inverse best_scales_transformation applied",
+    "inverse best_transformation_xyz applied",
+    "inverse coarse transformation applied",
+    "inverse diff transformation applied",
+    "G_aligned captured"
+  ]
+}

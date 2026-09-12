@@ -1,0 +1,566 @@
+{
+  "baseline_root": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\baseline_07136",
+  "comparisons": {
+    "file_hashes": {
+      "07136_fused.ply": {
+        "baseline_path": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\baseline_07136\\07136\\07136_fused.ply",
+        "baseline_sha256": "5cd9b07639a09f7e7d1ac383c8d2b1b818bdac9ee981ab5ac2a5a069a61be278",
+        "exact_match": false,
+        "replay_path": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\instrumented_boundary_07136\\07136\\07136_fused.ply",
+        "replay_sha256": "4d82c84f2a8e8712631d1c5987eeb39492dfd85ba9f0449e917549266566b0ed"
+      },
+      "07136_instantmesh.glb": {
+        "baseline_path": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\baseline_07136\\07136\\07136_instantmesh.glb",
+        "baseline_sha256": "ebefc5f601cc99e1f60fe672356207798cbe00482ce295c86a6a67b335c2928d",
+        "exact_match": false,
+        "replay_path": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\instrumented_boundary_07136\\07136\\07136_instantmesh.glb",
+        "replay_sha256": "5da4747cb186be88755b7f70e01c5ed81a70500c82a67a0b93414159eba77863"
+      },
+      "07136_zero123++.png": {
+        "baseline_path": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\baseline_07136\\07136\\07136_zero123++.png",
+        "baseline_sha256": "0402eb1cfee08dfef712004b411a4f54af061e6781a936037d30403f1fa955e7",
+        "exact_match": true,
+        "replay_path": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\instrumented_boundary_07136\\07136\\07136_zero123++.png",
+        "replay_sha256": "0402eb1cfee08dfef712004b411a4f54af061e6781a936037d30403f1fa955e7"
+      },
+      "color_point.ply": {
+        "baseline_path": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\baseline_07136\\07136\\color_point.ply",
+        "baseline_sha256": "cfee459d78ec37192a6e999c41944d7e6082e5beb0e6157b49812d691f72f01a",
+        "exact_match": true,
+        "replay_path": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\instrumented_boundary_07136\\07136\\color_point.ply",
+        "replay_sha256": "cfee459d78ec37192a6e999c41944d7e6082e5beb0e6157b49812d691f72f01a"
+      },
+      "final_transform.npy": {
+        "baseline_path": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\baseline_07136\\final_transform.npy",
+        "baseline_sha256": "add2e701138e053c1cf5a9b5f409efcc03511752e96d8611e00b43cac55282e8",
+        "exact_match": false,
+        "replay_path": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\instrumented_boundary_07136\\final_transform.npy",
+        "replay_sha256": "9ef7e7e85d46c81096183ee70ddd5cac5f5b45f8edcf24b642e63ce02493d371"
+      },
+      "img_sam.png": {
+        "baseline_path": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\baseline_07136\\07136\\img_sam.png",
+        "baseline_sha256": "610f5a77696bc3cc6a942c9b1cd7761084d4db348cda1a6113a2de5254102690",
+        "exact_match": true,
+        "replay_path": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\instrumented_boundary_07136\\07136\\img_sam.png",
+        "replay_sha256": "610f5a77696bc3cc6a942c9b1cd7761084d4db348cda1a6113a2de5254102690"
+      }
+    },
+    "fused_pointcloud": {
+      "baseline": {
+        "bytes": 532810,
+        "color_max": [
+          0.792156862745098,
+          0.6784313725490196,
+          0.6549019607843137
+        ],
+        "color_min": [
+          0.01568627450980392,
+          0.01568627450980392,
+          0.023529411764705882
+        ],
+        "has_colors": true,
+        "path": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\baseline_07136\\07136\\07136_fused.ply",
+        "point_count": 19726,
+        "sha256": "5cd9b07639a09f7e7d1ac383c8d2b1b818bdac9ee981ab5ac2a5a069a61be278",
+        "xyz_max": [
+          0.40682786641688784,
+          0.4180186155438955,
+          0.2847538154954035
+        ],
+        "xyz_min": [
+          -0.14403796232125662,
+          -0.2538429337206782,
+          -0.32386151901594235
+        ]
+      },
+      "color_tolerance": 1e-12,
+      "geometry_tolerance": 1e-08,
+      "max_abs_color_diff": null,
+      "max_abs_xyz_diff": null,
+      "replay": {
+        "bytes": 534754,
+        "color_max": [
+          0.8,
+          0.6352941176470588,
+          0.6
+        ],
+        "color_min": [
+          0.01568627450980392,
+          0.01568627450980392,
+          0.023529411764705882
+        ],
+        "has_colors": true,
+        "path": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\instrumented_boundary_07136\\07136\\07136_fused.ply",
+        "point_count": 19798,
+        "sha256": "4d82c84f2a8e8712631d1c5987eeb39492dfd85ba9f0449e917549266566b0ed",
+        "xyz_max": [
+          0.48415035445023796,
+          0.44685073251245544,
+          0.34148453970339093
+        ],
+        "xyz_min": [
+          -0.2852087666408069,
+          -0.32368116259777974,
+          -0.4228813340768763
+        ]
+      },
+      "same_shape": false,
+      "strict_geometry_pass": false
+    },
+    "metrics": {
+      "baseline": {
+        "cd": 0.07481462508440018,
+        "emd": 0.09742892533540726
+      },
+      "cd_abs_diff": 0.010243713855743408,
+      "emd_abs_diff": 0.004519954323768616,
+      "replay": {
+        "cd": 0.06457091122865677,
+        "emd": 0.10194887965917587
+      },
+      "strict_pass": false,
+      "tolerance": 1e-09
+    }
+  },
+  "copied_replay_stage2": {
+    "07136_fused.ply": {
+      "path": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\instrumented_boundary_07136\\07136\\07136_fused.ply",
+      "sha256": "234b9b32e87d2f14b74e1be224ee74d5047785955288e8b98b3a026b4b4342fc",
+      "source": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\instrumented_equivalence_07136_offline\\07136\\07136_fused.ply"
+    },
+    "07136_instantmesh.glb": {
+      "path": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\instrumented_boundary_07136\\07136\\07136_instantmesh.glb",
+      "sha256": "5da4747cb186be88755b7f70e01c5ed81a70500c82a67a0b93414159eba77863",
+      "source": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\instrumented_equivalence_07136_offline\\07136\\07136_instantmesh.glb"
+    },
+    "07136_zero123++.png": {
+      "path": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\instrumented_boundary_07136\\07136\\07136_zero123++.png",
+      "sha256": "0402eb1cfee08dfef712004b411a4f54af061e6781a936037d30403f1fa955e7",
+      "source": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\instrumented_equivalence_07136_offline\\07136\\07136_zero123++.png"
+    },
+    "color_point.ply": {
+      "path": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\instrumented_boundary_07136\\07136\\color_point.ply",
+      "sha256": "cfee459d78ec37192a6e999c41944d7e6082e5beb0e6157b49812d691f72f01a",
+      "source": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\instrumented_equivalence_07136_offline\\07136\\color_point.ply"
+    },
+    "img_sam.png": {
+      "path": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\instrumented_boundary_07136\\07136\\img_sam.png",
+      "sha256": "610f5a77696bc3cc6a942c9b1cd7761084d4db348cda1a6113a2de5254102690",
+      "source": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\instrumented_equivalence_07136_offline\\07136\\img_sam.png"
+    }
+  },
+  "equivalence_pass": false,
+  "finished_utc": "2026-09-12T14:54:52Z",
+  "official_upstream_commit": "bac9e7b59f4fea0eaaa936f24ef60f342f349829",
+  "outputs": {
+    "final_transform": {
+      "matrix": [
+        [
+          -0.324556827545166,
+          0.5367298722267151,
+          -0.051989294588565826,
+          0.046114202588796616
+        ],
+        [
+          0.3779250979423523,
+          0.18312084674835205,
+          -0.4687838554382324,
+          0.06891772150993347
+        ],
+        [
+          -0.3846484422683716,
+          -0.27295929193496704,
+          -0.4167226254940033,
+          -0.14890263974666595
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "path": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\instrumented_boundary_07136\\final_transform.npy",
+      "sha256": "9ef7e7e85d46c81096183ee70ddd5cac5f5b45f8edcf24b642e63ce02493d371"
+    },
+    "fused": {
+      "bytes": 534754,
+      "color_max": [
+        0.8,
+        0.6352941176470588,
+        0.6
+      ],
+      "color_min": [
+        0.01568627450980392,
+        0.01568627450980392,
+        0.023529411764705882
+      ],
+      "has_colors": true,
+      "path": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\instrumented_boundary_07136\\07136\\07136_fused.ply",
+      "point_count": 19798,
+      "sha256": "4d82c84f2a8e8712631d1c5987eeb39492dfd85ba9f0449e917549266566b0ed",
+      "xyz_max": [
+        0.48415035445023796,
+        0.44685073251245544,
+        0.34148453970339093
+      ],
+      "xyz_min": [
+        -0.2852087666408069,
+        -0.32368116259777974,
+        -0.4228813340768763
+      ]
+    },
+    "pre_fusion": {
+      "boundary": "immediately before official reg_xyz.remove_close_points(source_pcd, target_pcd, distance_threshold=0.0001)",
+      "distance_threshold": 0.0001,
+      "hook_behavior": "read-only capture; original remove_close_points called with unchanged objects and arguments",
+      "matrices": {
+        "best_scales_transformation": [
+          [
+            0.8444444444444444,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.8,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.2,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "best_transformation_xyz": [
+          [
+            0.9988431556214412,
+            0.0061314167477070315,
+            -0.047694404251177464,
+            -0.03031690235784609
+          ],
+          [
+            -0.009490312818236582,
+            0.9974651449284012,
+            -0.07052105086837562,
+            0.008232491714671136
+          ],
+          [
+            0.04714111189631417,
+            0.07089210380313134,
+            0.9963694220456342,
+            0.002328197155778845
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "coarse_transformation": [
+          [
+            0.7023315522977259,
+            0.381126749846087,
+            -0.03837696182396298,
+            0.10821737759917743
+          ],
+          [
+            -0.23319269613902877,
+            0.36182264877258496,
+            -0.6743185725624142,
+            -0.10252219684830109
+          ],
+          [
+            -0.3038939899282188,
+            0.6031805462603682,
+            0.428744296170295,
+            0.008574601121917916
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "diff_transform": [
+          [
+            -0.8193418383598328,
+            0.9540697932243347,
+            -0.971042811870575,
+            -0.17255985736846924
+          ],
+          [
+            1.3549712896347046,
+            0.4622875452041626,
+            -0.6890841126441956,
+            -0.19694967567920685
+          ],
+          [
+            -0.13124670088291168,
+            -1.183442234992981,
+            -1.052013874053955,
+            -0.06903516501188278
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "inverse_best_scales_transformation": [
+          [
+            1.1842105263157894,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.25,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.8333333333333334,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "inverse_best_transformation_xyz": [
+          [
+            0.9988431556214339,
+            -0.009490312818236675,
+            0.047141111896313814,
+            0.0302502055387864
+          ],
+          [
+            0.006131416747706844,
+            0.9974651449283969,
+            0.07089210380313098,
+            -0.008190788772882408
+          ],
+          [
+            -0.047694404251177186,
+            -0.07052105086837526,
+            0.9963694220456283,
+            -0.0031851270842264204
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "inverse_coarse_transformation": [
+          [
+            1.0973930504651712,
+            -0.36436358771722466,
+            -0.4748343592628294,
+            -0.15204083835154092
+          ],
+          [
+            0.5955105466345049,
+            0.5653478887071574,
+            0.9424696035318143,
+            -0.014565183075449612
+          ],
+          [
+            -0.05996400284993989,
+            -1.0536227696287537,
+            0.6699129627660733,
+            -0.1072748102950825
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "inverse_diff_transform": [
+          [
+            -0.32455683107600586,
+            0.5367298860969957,
+            -0.05198929479908685,
+            0.046114206970396615
+          ],
+          [
+            0.37792508518609863,
+            0.18312085490788474,
+            -0.4687838453175085,
+            0.06891772166348765
+          ],
+          [
+            -0.38464843869925747,
+            -0.2729593094765371,
+            -0.4167226172178319,
+            -0.14890264183778917
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "inverse_diff_transform_at_boundary": [
+          [
+            -0.324556827545166,
+            0.5367298722267151,
+            -0.051989294588565826,
+            0.046114206314086914
+          ],
+          [
+            0.3779250979423523,
+            0.18312086164951324,
+            -0.4687838554382324,
+            0.06891772150993347
+          ],
+          [
+            -0.3846484422683716,
+            -0.27295932173728943,
+            -0.4167226254940033,
+            -0.14890263974666595
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      "source_label": "O_aligned",
+      "source_pcd": {
+        "bytes": 2400940,
+        "color_max": [
+          0.8,
+          0.7098039215686275,
+          0.6549019607843137
+        ],
+        "color_min": [
+          0.011764705882352941,
+          0.011764705882352941,
+          0.00392156862745098
+        ],
+        "has_colors": true,
+        "path": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\instrumented_boundary_07136\\pre_fusion\\O_aligned.ply",
+        "point_count": 88916,
+        "sha256": "ea804a56fd4326707a4590b56da6097881ea217b8dda423acb4b5876d60a79bc",
+        "xyz_max": [
+          0.1805339437070825,
+          0.3648150948541299,
+          0.1553943857763176
+        ],
+        "xyz_min": [
+          -0.14957700479595795,
+          -0.21543262271801755,
+          -0.37147298798176975
+        ]
+      },
+      "source_semantics": [
+        "upstream color_point.ply point cloud",
+        "remove_noise_from_point_cloud",
+        "diff_transform applied",
+        "coarse_transformation applied for ICP search",
+        "inverse coarse transformation applied",
+        "inverse diff transformation applied",
+        "O_aligned captured"
+      ],
+      "target_label": "G_aligned",
+      "target_pcd": {
+        "bytes": 4423889,
+        "color_max": [
+          0.7803921568627451,
+          0.6823529411764706,
+          0.6196078431372549
+        ],
+        "color_min": [
+          0.027450980392156862,
+          0.027450980392156862,
+          0.03137254901960784
+        ],
+        "has_colors": true,
+        "path": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\instrumented_boundary_07136\\pre_fusion\\G_aligned.ply",
+        "point_count": 163840,
+        "sha256": "5fc3cece7021929afc0e92c0cfa66e1b3a391e12e1bba9d826a53f435f45271d",
+        "xyz_max": [
+          0.4844833817843944,
+          0.44685073251245544,
+          0.34168212685274557
+        ],
+        "xyz_min": [
+          -0.2859220764900352,
+          -0.3242686470146712,
+          -0.42321986756616087
+        ]
+      },
+      "target_semantics": [
+        "InstantMesh GLB converted by glb2point",
+        "normalize_numpy(range=0.5)",
+        "InstantMesh x-axis +90 degree rotation",
+        "InstantMesh y-axis +90 degree rotation",
+        "inverse best_scales_transformation applied",
+        "inverse best_transformation_xyz applied",
+        "inverse coarse transformation applied",
+        "inverse diff transformation applied",
+        "G_aligned captured"
+      ]
+    },
+    "stage2_files": {
+      "07136_fused.ply": {
+        "path": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\instrumented_boundary_07136\\07136\\07136_fused.ply",
+        "sha256": "234b9b32e87d2f14b74e1be224ee74d5047785955288e8b98b3a026b4b4342fc",
+        "source": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\instrumented_equivalence_07136_offline\\07136\\07136_fused.ply"
+      },
+      "07136_instantmesh.glb": {
+        "path": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\instrumented_boundary_07136\\07136\\07136_instantmesh.glb",
+        "sha256": "5da4747cb186be88755b7f70e01c5ed81a70500c82a67a0b93414159eba77863",
+        "source": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\instrumented_equivalence_07136_offline\\07136\\07136_instantmesh.glb"
+      },
+      "07136_zero123++.png": {
+        "path": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\instrumented_boundary_07136\\07136\\07136_zero123++.png",
+        "sha256": "0402eb1cfee08dfef712004b411a4f54af061e6781a936037d30403f1fa955e7",
+        "source": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\instrumented_equivalence_07136_offline\\07136\\07136_zero123++.png"
+      },
+      "color_point.ply": {
+        "path": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\instrumented_boundary_07136\\07136\\color_point.ply",
+        "sha256": "cfee459d78ec37192a6e999c41944d7e6082e5beb0e6157b49812d691f72f01a",
+        "source": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\instrumented_equivalence_07136_offline\\07136\\color_point.ply"
+      },
+      "img_sam.png": {
+        "path": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\instrumented_boundary_07136\\07136\\img_sam.png",
+        "sha256": "610f5a77696bc3cc6a942c9b1cd7761084d4db348cda1a6113a2de5254102690",
+        "source": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\instrumented_equivalence_07136_offline\\07136\\img_sam.png"
+      }
+    }
+  },
+  "registration_and_fusion_memory": {
+    "peak_allocated_bytes": 28467712,
+    "peak_reserved_bytes": 33554432
+  },
+  "run_id": "instrumented_boundary_07136_20260912",
+  "source_replay_root": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\instrumented_equivalence_07136_offline",
+  "started_utc": "2026-09-12T14:53:26Z",
+  "status": "completed"
+}

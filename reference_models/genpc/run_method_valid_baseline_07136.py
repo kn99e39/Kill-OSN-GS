@@ -29,6 +29,8 @@ MANIFEST_PATH = ROOT / "METHOD_VALID_BASELINE_07136_20260912.json"
 RUN_ROOT = ROOT / "runs" / "baseline_07136"
 FLAG = "07136"
 CUDA_HOME = Path(r"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.8")
+RMBG_REVISION = "5df4c9c76d8170882c34f6986e848ee07fd0ba43"
+RMBG_MODEL_DIR = ROOT / "model_cache" / "RMBG-2.0" / RMBG_REVISION
 
 
 def configure_cuda_runtime() -> None:
@@ -39,6 +41,23 @@ def configure_cuda_runtime() -> None:
     os.environ["PATH"] = os.pathsep.join(
         [str(CUDA_HOME / "bin"), str(CUDA_HOME / "lib" / "x64"), os.environ["PATH"]]
     )
+
+
+def install_rmbg_revision_compat() -> str:
+    """Keep the author RMBG call on the already verified exact local revision."""
+    from transformers import AutoModelForImageSegmentation
+
+    if not RMBG_MODEL_DIR.exists():
+        raise FileNotFoundError(f"verified RMBG model directory is missing: {RMBG_MODEL_DIR}")
+    original_from_pretrained = AutoModelForImageSegmentation.from_pretrained
+
+    def exact_from_pretrained(pretrained_model_name_or_path, *args, **kwargs):
+        if pretrained_model_name_or_path == "briaai/RMBG-2.0":
+            pretrained_model_name_or_path = str(RMBG_MODEL_DIR)
+        return original_from_pretrained(pretrained_model_name_or_path, *args, **kwargs)
+
+    AutoModelForImageSegmentation.from_pretrained = exact_from_pretrained
+    return f"local_exact_revision:{RMBG_REVISION}"
 
 
 def sha256(path: Path) -> str:
@@ -138,6 +157,10 @@ def main() -> int:
     manifest = json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
     validate_manifest(manifest)
     configure_cuda_runtime()
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    if hasattr(sys.stderr, "reconfigure"):
+        sys.stderr.reconfigure(encoding="utf-8", errors="replace")
     output_dir = RUN_ROOT / FLAG
     result_path = RUN_ROOT / "baseline_result.json"
     resume_depth_stage = False
@@ -216,6 +239,7 @@ def main() -> int:
         sys.path.insert(0, str(INSTANTMESH))
         result["compatibility_shim"] = install_mesh_util_compat()
         result["diffusers_compatibility_shim"] = install_diffusers_compat()
+        result["rmbg_revision_compatibility_shim"] = install_rmbg_revision_compat()
         from ScaleAdapter import ScaleAdapter
 
         torch.cuda.reset_peak_memory_stats()
@@ -249,6 +273,7 @@ def main() -> int:
             result["metrics_status"] = "unavailable_after_single_run"
             result["metrics_error"] = f"{type(exc).__name__}: {exc}"
 
+        result.pop("error", None)
         result["status"] = "completed"
     except Exception as exc:  # preserve the one-run failure evidence
         result["status"] = "failed"

@@ -1,0 +1,59 @@
+{
+  "run_id": "method_valid_substrate_07136_20260912",
+  "sample": "07136",
+  "category": "sofa",
+  "official_upstream_commit": "bac9e7b59f4fea0eaaa936f24ef60f342f349829",
+  "manifest": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\METHOD_VALID_BASELINE_07136_20260912.json",
+  "rmbg_revision": "5df4c9c76d8170882c34f6986e848ee07fd0ba43",
+  "seed": 42,
+  "experiment1_run": false,
+  "structural_association": "not_defined",
+  "status": "not_ready",
+  "exact_published_baseline": "blocked",
+  "genpc_method_valid_substrate": "not_ready",
+  "decision": {
+    "freeze_substrate": false,
+    "reason": "Strict replay equivalence failed; no Experiment 1 execution is authorized.",
+    "failure_classification": "GENPC_METHOD_VALID_SUBSTRATE_EQUIVALENCE_FAILURE"
+  },
+  "evidence": {
+    "completed_baseline_result": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\baseline_07136\\baseline_result.json",
+    "completed_baseline_audit": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\baseline_07136\\baseline_artifact_audit_20260912.json",
+    "full_downstream_replay_result": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\instrumented_equivalence_07136_offline\\instrumented_equivalence_result.json",
+    "corrected_boundary_capture_result": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\instrumented_boundary_07136\\boundary_capture_result.json",
+    "transform_lineage": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\instrumented_boundary_07136\\pre_fusion\\transform_lineage.json",
+    "O_aligned": {
+      "path": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\instrumented_boundary_07136\\pre_fusion\\O_aligned.ply",
+      "point_count": 88916,
+      "sha256": "ea804a56fd4326707a4590b56da6097881ea217b8dda423acb4b5876d60a79bc"
+    },
+    "G_aligned": {
+      "path": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\instrumented_boundary_07136\\pre_fusion\\G_aligned.ply",
+      "point_count": 163840,
+      "sha256": "5fc3cece7021929afc0e92c0cfa66e1b3a391e12e1bba9d826a53f435f45271d"
+    }
+  },
+  "baseline_metrics": {
+    "cd": 0.07481462508440018,
+    "emd": 0.09742892533540726
+  },
+  "full_replay_metrics": {
+    "cd": 0.06143774464726448,
+    "emd": 0.0757361352443695
+  },
+  "strict_comparison": {
+    "zero123_image_exact": true,
+    "color_point_exact": true,
+    "img_sam_exact": true,
+    "instantmesh_glb_exact": false,
+    "final_transform_exact": false,
+    "fused_pointcloud_exact": false,
+    "cd_emd_exact_within_1e-9": false,
+    "equivalence_pass": false
+  },
+  "prohibited_next_steps": [
+    "Do not run Experiment 1.",
+    "Do not tune thresholds or model settings to force equivalence.",
+    "Do not define Structural Association from this not-ready substrate."
+  ]
+}

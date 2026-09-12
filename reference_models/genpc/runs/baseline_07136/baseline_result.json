@@ -1,22 +1,42 @@
 {
   "compatibility_shim": "injected_external_compat",
   "diffusers_compatibility_shim": "injected_custom_pipeline_trust_remote_code",
-  "error": "OSError: You are trying to access a gated repo.\nMake sure to have access to it at https://huggingface.co/briaai/RMBG-2.0.\n401 Client Error. (Request ID: Root=1-6aa54ae5-6122e52f243f7d175ccd33b3;0049a44f-f322-40f5-bd09-a4a2090c4896)\n\nCannot access gated repo for url https://huggingface.co/briaai/RMBG-2.0/resolve/main/config.json.\nAccess to model briaai/RMBG-2.0 is restricted. You must have access to it and be authenticated to access it. Please log in.",
-  "finished_utc": "2026-09-12T12:51:50Z",
+  "finished_utc": "2026-09-12T14:39:06Z",
   "ground_truth_sha256": "94c1d6e37ed3a282233d29882c45879b804902cf51a050a8859ed0d9f57ded72",
   "input_sha256": "c39836b809caad0257323b47cbc29aba0da9d2d1ecc32a8d51c39edb84f021cc",
   "manifest": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\METHOD_VALID_BASELINE_07136_20260912.json",
+  "metrics": {
+    "cd": 0.07481462508440018,
+    "emd": 0.09742892533540726
+  },
+  "metrics_status": "author_metric_reproduced",
   "official_upstream_commit": "bac9e7b59f4fea0eaaa936f24ef60f342f349829",
+  "outputs": {
+    "final_transform_path": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\baseline_07136\\final_transform.npy",
+    "fused_path": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\baseline_07136\\07136\\07136_fused.ply",
+    "fused_sha256": "5cd9b07639a09f7e7d1ac383c8d2b1b818bdac9ee981ab5ac2a5a069a61be278"
+  },
   "resume_reason": "depth/controlnet completed; prior failure was before ScaleAdapter import",
-  "resumed_utc": "2026-09-12T12:51:44Z",
+  "resumed_utc": "2026-09-12T14:38:05Z",
+  "rmbg_revision_compatibility_shim": "local_exact_revision:5df4c9c76d8170882c34f6986e848ee07fd0ba43",
   "run_id": "method_valid_baseline_07136_20260912",
   "stages": {
     "depth_prompting_and_controlnet": {
       "peak_allocated_bytes": 12305552896,
       "peak_reserved_bytes": 14770241536,
       "status": "completed"
+    },
+    "registration_and_fusion": {
+      "peak_allocated_bytes": 6304836608,
+      "peak_reserved_bytes": 19203620864,
+      "status": "completed"
+    },
+    "scale_adapter": {
+      "peak_allocated_bytes": 16486839296,
+      "peak_reserved_bytes": 19203620864,
+      "status": "completed"
     }
   },
   "started_utc": "2026-09-12T12:49:08Z",
-  "status": "failed"
+  "status": "completed"
 }

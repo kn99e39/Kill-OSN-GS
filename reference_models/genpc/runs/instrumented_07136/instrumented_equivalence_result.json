@@ -1,0 +1,54 @@
+{
+  "baseline_root": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\baseline_07136",
+  "compatibility_shim": "injected_external_compat",
+  "diffusers_compatibility_shim": "injected_custom_pipeline_trust_remote_code",
+  "equivalence_pass": false,
+  "error": "PermissionError: [Errno 13] Permission denied: 'C:\\\\Users\\\\dna10\\\\.cache\\\\huggingface\\\\modules\\\\diffusers_modules\\\\local\\\\pipeline.py'",
+  "finished_utc": "2026-09-12T14:46:19Z",
+  "manifest": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\METHOD_VALID_BASELINE_07136_20260912.json",
+  "official_upstream_commit": "bac9e7b59f4fea0eaaa936f24ef60f342f349829",
+  "preserved_stage1": {
+    "camera.pth": {
+      "path": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\instrumented_07136\\07136\\camera.pth",
+      "sha256": "ca4db99e59b63e73069e70ea5fc915bdbd9b7db739b371a702b4cae9feb63faa",
+      "source": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\baseline_07136\\07136\\camera.pth"
+    },
+    "depth.png": {
+      "path": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\instrumented_07136\\07136\\depth.png",
+      "sha256": "1008c49215b46dba9aa3136dbab1a11b3cf4831d5779978b966faf2574663a8a",
+      "source": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\baseline_07136\\07136\\depth.png"
+    },
+    "img.png": {
+      "path": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\instrumented_07136\\07136\\img.png",
+      "sha256": "5f294d735c1107cf887905f969659bf69a2f6a3788cd798a27a31ae37ee2bf1a",
+      "source": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\baseline_07136\\07136\\img.png"
+    },
+    "mask.png": {
+      "path": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\instrumented_07136\\07136\\mask.png",
+      "sha256": "1979a486909e89ed44ccf612ce249a68473413369c032a4dcd402d5bcc706321",
+      "source": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\baseline_07136\\07136\\mask.png"
+    },
+    "point_uv.npy": {
+      "path": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\instrumented_07136\\07136\\point_uv.npy",
+      "sha256": "d5688a9a84dd504316bc8c14db72ba92f7d856eeba91f38b59e014fc75bfa6c8",
+      "source": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\baseline_07136\\07136\\point_uv.npy"
+    },
+    "raw_depth.png": {
+      "path": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\instrumented_07136\\07136\\raw_depth.png",
+      "sha256": "16ad3df5eb28750e7f4429cd37eec4925a689e319ef5e62394b2a95afe3e31a0",
+      "source": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\baseline_07136\\07136\\raw_depth.png"
+    },
+    "viewpoint.npy": {
+      "path": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\instrumented_07136\\07136\\viewpoint.npy",
+      "sha256": "af46204b40610cd7e1cfb7aafe52abe1938ddf04606222ac8af36a83f3f36733",
+      "source": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\baseline_07136\\07136\\viewpoint.npy"
+    }
+  },
+  "replay_root": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\instrumented_07136",
+  "rmbg_revision": "5df4c9c76d8170882c34f6986e848ee07fd0ba43",
+  "rmbg_revision_compatibility_shim": "local_exact_revision:5df4c9c76d8170882c34f6986e848ee07fd0ba43",
+  "run_id": "instrumented_equivalence_07136_20260912",
+  "stages": {},
+  "started_utc": "2026-09-12T14:46:11Z",
+  "status": "failed"
+}
