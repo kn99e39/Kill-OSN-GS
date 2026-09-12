@@ -4,3 +4,24 @@ reference_models/lascomp/upstream/
 # Python execution by-products.
 __pycache__/
 *.py[cod]
+
+# Local editor settings and downloaded project assets.
+.vscode/
+models/
+
+# Native GenPC runtime/checkouts and generated runs.  The committed manifests,
+# worklogs, scripts, and small JSON evidence files remain tracked normally.
+reference_models/genpc/upstream/
+reference_models/genpc/dependencies/
+reference_models/genpc/env-blackwell/
+reference_models/genpc/model_cache/
+reference_models/genpc/toolchain/downloads/
+reference_models/genpc/runs/
+
+# One-off local GenPC probes and their dated logs.
+reference_models/genpc/audit_07136_baseline.py
+reference_models/genpc/debug_instantmesh_import_07136.py
+reference_models/genpc/rmbg_load_probe.py
+reference_models/genpc/audit_07136_baseline_*.log
+reference_models/genpc/baseline_resume_*.log
+reference_models/genpc/rmbg_load_probe_*.log
