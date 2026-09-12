@@ -340,10 +340,17 @@ class ControlInvariantReport:
 
 
 def verify_only_association_changed(
-    baseline: Experiment1ControlPlane,
-    candidate: Experiment1ControlPlane,
+    baseline: Any,
+    candidate: Any,
 ) -> ControlInvariantReport:
-    """Reject every altered frozen control while allowing a different A."""
+    """Reject every altered frozen control while allowing a different A.
+
+    The small GenPC control wrapper intentionally exposes the same
+    ``frozen_fingerprints`` protocol, so this historical invariant can verify
+    it without creating a second association/partition contract.
+    """
+    if not hasattr(baseline, "frozen_fingerprints") or not hasattr(candidate, "frozen_fingerprints"):
+        raise ContractError("controls must expose frozen_fingerprints()")
     before = baseline.frozen_fingerprints()
     after = candidate.frozen_fingerprints()
     keys = sorted(set(before).union(after))
