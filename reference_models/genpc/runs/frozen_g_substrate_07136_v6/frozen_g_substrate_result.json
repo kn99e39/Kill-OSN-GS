@@ -1,0 +1,1216 @@
+{
+  "GT_and_evaluation_frozen": true,
+  "canonical_artifacts": {
+    "GT": {
+      "bytes": 1850740,
+      "color_hash": null,
+      "color_max": [],
+      "color_min": [],
+      "coordinate_hash": "bde0e053031dd13a594b9a8d917c355c74cdb5b67da247472c4595d0da3ccceb",
+      "geometry_sha256": "07cf82ea6730117243b4f530fc36b41a7d76b8fb7054cee4bb017ed71a1ec61c",
+      "has_colors": false,
+      "path": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\upstream\\data\\GT\\07136.ply",
+      "point_count": 77108,
+      "point_order_hash": "bde0e053031dd13a594b9a8d917c355c74cdb5b67da247472c4595d0da3ccceb",
+      "sha256": "94c1d6e37ed3a282233d29882c45879b804902cf51a050a8859ed0d9f57ded72",
+      "xyz_max": [
+        0.18789627982824067,
+        0.37398704225864465,
+        0.15603246476681729
+      ],
+      "xyz_min": [
+        -0.16094254096674973,
+        -0.21348077187562983,
+        -0.4844270728242652
+      ]
+    },
+    "G_raw_canonical": {
+      "bytes": 1681376,
+      "face_count": 84016,
+      "geometry_sha256": "654fe0872e513fc74daba04994aff52845c58decbb7c25321086922b91daf75f",
+      "mesh_count": 1,
+      "parts": [
+        {
+          "faces": 84016,
+          "name": "geometry_0",
+          "vertices": 42012
+        }
+      ],
+      "path": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\baseline_07136\\07136\\07136_instantmesh.glb",
+      "sha256": "ebefc5f601cc99e1f60fe672356207798cbe00482ce295c86a6a67b335c2928d",
+      "vertex_count": 42012
+    },
+    "O_raw_registration": {
+      "bytes": 2603089,
+      "color_hash": "26cf50ec7235f82bf6f38c2fd2cd9fea6af62174ae14bc2045d3dd6a25a72a00",
+      "color_max": [
+        0.8,
+        0.7098039215686275,
+        0.6549019607843137
+      ],
+      "color_min": [
+        0.011764705882352941,
+        0.011764705882352941,
+        0.00392156862745098
+      ],
+      "coordinate_hash": "1e717fbf4bffa69fb45af0054da4759947eb1aed876895b72ee426fc7e362b57",
+      "geometry_sha256": "8b524609bcc94d484adf766a2cd9be1e9c5617a4859a7233a099074fd25cc641",
+      "has_colors": true,
+      "path": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\baseline_07136\\07136\\color_point.ply",
+      "point_count": 96403,
+      "point_order_hash": "1e717fbf4bffa69fb45af0054da4759947eb1aed876895b72ee426fc7e362b57",
+      "sha256": "cfee459d78ec37192a6e999c41944d7e6082e5beb0e6157b49812d691f72f01a",
+      "xyz_max": [
+        0.22681960463523865,
+        0.37823250889778137,
+        0.15539437532424927
+      ],
+      "xyz_min": [
+        -0.1512167751789093,
+        -0.21543261408805847,
+        -0.37798255681991577
+      ]
+    },
+    "instantmesh_configuration": {
+      "config_path": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\dependencies\\InstantMesh\\configs\\instant-mesh-base.yaml",
+      "config_sha256": "3f0786add80b310ee1c46f8790e2c796d3c2c0cb20808972a4622e62ef962d8d",
+      "diffusion_steps": 75,
+      "generative_model": "instantmesh",
+      "seed": 42
+    },
+    "preprocessing_lineage": [
+      "upstream data/07136.ply",
+      "DepthPrompting/ControlNet stage output preserved in baseline",
+      "ScaleAdapter.colorPoint sampling from preserved img.png",
+      "baseline color_point.ply selected as O_raw_registration"
+    ],
+    "source_observation": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\upstream\\data\\07136.ply",
+    "zero123_input_sha256": "610f5a77696bc3cc6a942c9b1cd7761084d4db348cda1a6113a2de5254102690",
+    "zero123_output_sha256": "0402eb1cfee08dfef712004b411a4f54af061e6781a936037d30403f1fa955e7"
+  },
+  "canonical_selection_rule": "first successfully completed method-valid baseline lineage by chronology; no CD/EMD quality selection",
+  "canonical_source_run": "baseline_07136",
+  "control_inputs": {
+    "07136_instantmesh.glb": {
+      "path": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\frozen_g_control_07136_v6\\07136\\07136_instantmesh.glb",
+      "sha256": "ebefc5f601cc99e1f60fe672356207798cbe00482ce295c86a6a67b335c2928d",
+      "source": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\frozen_g_substrate_07136_v6\\frozen_inputs\\G_raw_canonical_07136.glb"
+    },
+    "color_point.ply": {
+      "path": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\frozen_g_control_07136_v6\\07136\\color_point.ply",
+      "sha256": "cfee459d78ec37192a6e999c41944d7e6082e5beb0e6157b49812d691f72f01a",
+      "source": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\frozen_g_substrate_07136_v6\\frozen_inputs\\O_raw_registration.ply"
+    }
+  },
+  "control_registration": {
+    "boundary_export": false,
+    "final_transform": {
+      "matrix": [
+        [
+          -0.33304363489151,
+          0.446653813123703,
+          -0.2910953760147095,
+          0.047417670488357544
+        ],
+        [
+          0.4422813653945923,
+          0.039816297590732574,
+          -0.44492244720458984,
+          0.07815070450305939
+        ],
+        [
+          -0.29769667983055115,
+          -0.4405328929424286,
+          -0.3353530168533325,
+          -0.1550077646970749
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "path": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\frozen_g_control_07136_v6\\final_transform.npy",
+      "sha256": "d6eed19f00bd5bdf042fb2bc90ed05c2f6ae9048eb43d51a3b1acdf3e957b6eb"
+    },
+    "fused": {
+      "bytes": 532189,
+      "color_hash": "27c3adae15d7f29e625b23cef450d0a8240404884b0286ab48880cbc10ea955d",
+      "color_max": [
+        0.792156862745098,
+        0.6588235294117647,
+        0.611764705882353
+      ],
+      "color_min": [
+        0.01568627450980392,
+        0.01568627450980392,
+        0.023529411764705882
+      ],
+      "coordinate_hash": "8674cf0ea0816b5b4042d496727f16c768885f52e24f88b0f5865f0589dabacc",
+      "geometry_sha256": "71d35867f0c98fa9a9417c84e1e410356ecb78b1cd2e5b2014300ed0af3c2b32",
+      "has_colors": true,
+      "path": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\frozen_g_control_07136_v6\\07136\\07136_fused.ply",
+      "point_count": 19703,
+      "point_order_hash": "8674cf0ea0816b5b4042d496727f16c768885f52e24f88b0f5865f0589dabacc",
+      "sha256": "2d74001bfe71cebb5f4dbddefad22b4a5727c89cc41a4bcef1861dbee204dad4",
+      "xyz_max": [
+        0.3507808609462366,
+        0.3631753104836775,
+        0.21673886354766658
+      ],
+      "xyz_min": [
+        -0.15131756200211438,
+        -0.21111384438604974,
+        -0.34286849303628986
+      ]
+    },
+    "memory": {
+      "peak_allocated_bytes": 28457472,
+      "peak_reserved_bytes": 31457280
+    },
+    "rng_after_registration": {
+      "declared_seed": 42,
+      "numpy": {
+        "state_sha256": "31fb34530fef238f317194d16e235c3ea2758faabea7d4aca37e6ae90b6b1cdc"
+      },
+      "python": {
+        "state_sha256": "21feb557e3da2a52be59d0a03105f7314322a903b4cca49a0e125c43cf2885d0"
+      },
+      "torch_cpu": {
+        "initial_seed": 42,
+        "state_sha256": "5feb54a46230d321d888e9b43cf5a57492665f199e4377408d79ee460e36679c"
+      },
+      "torch_cuda": {
+        "initial_seed": 42,
+        "state_sha256": [
+          "aefdce03def94ffed42159e55677ec20e91200e1981f25b1f271b6fd99c3c263"
+        ]
+      }
+    },
+    "rng_before_registration": {
+      "declared_seed": 42,
+      "numpy": {
+        "state_sha256": "a7f5f1d23152cfb723e961fc900954baa7f903054a4fa500eebefb5d5aff780b"
+      },
+      "python": {
+        "state_sha256": "21feb557e3da2a52be59d0a03105f7314322a903b4cca49a0e125c43cf2885d0"
+      },
+      "torch_cpu": {
+        "initial_seed": 42,
+        "state_sha256": "5feb54a46230d321d888e9b43cf5a57492665f199e4377408d79ee460e36679c"
+      },
+      "torch_cuda": {
+        "initial_seed": 42,
+        "state_sha256": [
+          "aefdce03def94ffed42159e55677ec20e91200e1981f25b1f271b6fd99c3c263"
+        ]
+      }
+    },
+    "status": "completed"
+  },
+  "deterministic_settings": {
+    "cuda_matmul_allow_tf32": false,
+    "cudnn_allow_tf32": true,
+    "cudnn_benchmark": false,
+    "cudnn_deterministic": false,
+    "torch_deterministic_algorithms_enabled": false
+  },
+  "exact_published_baseline": "blocked",
+  "experiment1_run": false,
+  "finished_utc": "2026-09-12T17:01:15Z",
+  "frozen_inputs": {
+    "GT": {
+      "path": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\frozen_g_substrate_07136_v6\\frozen_inputs\\GT_07136.ply",
+      "sha256": "94c1d6e37ed3a282233d29882c45879b804902cf51a050a8859ed0d9f57ded72",
+      "source": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\upstream\\data\\GT\\07136.ply"
+    },
+    "G_raw_canonical": {
+      "path": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\frozen_g_substrate_07136_v6\\frozen_inputs\\G_raw_canonical_07136.glb",
+      "sha256": "ebefc5f601cc99e1f60fe672356207798cbe00482ce295c86a6a67b335c2928d",
+      "source": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\baseline_07136\\07136\\07136_instantmesh.glb"
+    },
+    "O_raw_registration": {
+      "path": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\frozen_g_substrate_07136_v6\\frozen_inputs\\O_raw_registration.ply",
+      "sha256": "cfee459d78ec37192a6e999c41944d7e6082e5beb0e6157b49812d691f72f01a",
+      "source": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\baseline_07136\\07136\\color_point.ply"
+    }
+  },
+  "fusion_only_replay": {
+    "filtered_target": {
+      "color_hash": "8c1ad0b1aa5371f0cbc363ffd68db1e0feeff315948ef286f5ff3e207d12f69a",
+      "color_max": [
+        0.8010528602032365,
+        0.6934424472720038,
+        0.6166596751884489
+      ],
+      "color_min": [
+        0.033268490938616856,
+        0.03440358408941271,
+        0.030701706752808526
+      ],
+      "coordinate_hash": "0f098af0f60535d54d5a3737693a571f5d4690cb8abcc5e6f8bc15bc416fadd1",
+      "has_colors": true,
+      "point_count": 152968,
+      "point_order_hash": "0f098af0f60535d54d5a3737693a571f5d4690cb8abcc5e6f8bc15bc416fadd1",
+      "xyz_max": [
+        0.3301242859291532,
+        0.3903382542632841,
+        0.24441522460290482
+      ],
+      "xyz_min": [
+        -0.23650433728879072,
+        -0.29468369721902876,
+        -0.3678104170319981
+      ]
+    },
+    "fused": {
+      "bytes": 533809,
+      "color_hash": "14825ff942dbfb5528950bf0a5c6bf2fe9d9b2cfe7c72763f39d37511e8d4d34",
+      "color_max": [
+        0.7803921568627451,
+        0.6627450980392157,
+        0.611764705882353
+      ],
+      "color_min": [
+        0.01568627450980392,
+        0.011764705882352941,
+        0.023529411764705882
+      ],
+      "coordinate_hash": "4b80f7855ab57cdb9f71c99c3b6e6bf1a699b0e214cbe77da747d278261b7da2",
+      "geometry_sha256": "873d441721530ef3419595bdd90128b3a982545e8fb395d2d4fa5d00916ec85d",
+      "has_colors": true,
+      "path": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\frozen_g_fusion_replay_07136_v6\\07136\\07136_fused.ply",
+      "point_count": 19763,
+      "point_order_hash": "4b80f7855ab57cdb9f71c99c3b6e6bf1a699b0e214cbe77da747d278261b7da2",
+      "sha256": "2f0e8400ffe3d91e86ff7bf36460ecc7d9340443e2945ae056893fc2535e5541",
+      "xyz_max": [
+        0.32929697349014725,
+        0.38946881275689577,
+        0.24399231564262258
+      ],
+      "xyz_min": [
+        -0.23608274816957658,
+        -0.29422543779845706,
+        -0.36742125074063364
+      ]
+    },
+    "fusion_rng": {
+      "path": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\frozen_g_instrumented_07136_v6\\pre_fusion\\numpy_rng_before_fusion.pkl",
+      "sha256": "a7f5f1d23152cfb723e961fc900954baa7f903054a4fa500eebefb5d5aff780b"
+    },
+    "lossless_sidecars": {
+      "G_aligned_exact": {
+        "path": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\frozen_g_instrumented_07136_v6\\pre_fusion\\G_aligned_exact.npz",
+        "sha256": "68c44193013ceee48fff1febe5650d79b97d5eb73d415a96f0eb4a579d4d5adc"
+      },
+      "O_aligned_exact": {
+        "path": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\frozen_g_instrumented_07136_v6\\pre_fusion\\O_aligned_exact.npz",
+        "sha256": "31567e843d57cf20e11848bcb6dd5fb644444e5f70cd005547c9a9697fdae3ba"
+      }
+    },
+    "point_accounting": {
+      "filtered_target_count": 152968,
+      "final_count": 19763,
+      "fps_requested": 20000,
+      "fps_selected_count": 20000,
+      "pre_fps_fused_count": 241884,
+      "source_count": 88916,
+      "target_count": 163840
+    },
+    "source": {
+      "bytes": 2400940,
+      "color_hash": "568a4814fb304b7f9fdea793730b82a4f9e40e538c8c30a03ea008cdcd0320d9",
+      "color_max": [
+        0.8,
+        0.7098039215686275,
+        0.6549019607843137
+      ],
+      "color_min": [
+        0.011764705882352941,
+        0.011764705882352941,
+        0.00392156862745098
+      ],
+      "coordinate_hash": "2378c8ae40825f504b3460c09ccce8f6bd2f9a517d3a280b12928003303dfb2b",
+      "has_colors": true,
+      "path": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\frozen_g_instrumented_07136_v6\\pre_fusion\\O_aligned.ply",
+      "point_count": 88916,
+      "point_order_hash": "2378c8ae40825f504b3460c09ccce8f6bd2f9a517d3a280b12928003303dfb2b",
+      "sha256": "31124b6b5307848def4e75a8ceb86a72adea53e4e93712ef40fd098e038d7f0a",
+      "xyz_max": [
+        0.18053394559471259,
+        0.3648150788416421,
+        0.15539437730502814
+      ],
+      "xyz_min": [
+        -0.1495770076211167,
+        -0.2154326127507709,
+        -0.3714729806114198
+      ]
+    },
+    "status": "completed",
+    "target": {
+      "bytes": 4423889,
+      "color_hash": "710d7c6d84a4200c2c95dcdbd77c4270befcb4d57b2c67d6afc7770cfa8ba5e5",
+      "color_max": [
+        0.8010528602032365,
+        0.6934424472720038,
+        0.6166596751884489
+      ],
+      "color_min": [
+        0.02871368009775395,
+        0.028657108430942053,
+        0.030701706752808526
+      ],
+      "coordinate_hash": "40b93145d7c12ab0675b4abce6d19c8907d841d5768ef3f7f310b34129cd5bc4",
+      "has_colors": true,
+      "path": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\frozen_g_instrumented_07136_v6\\pre_fusion\\G_aligned.ply",
+      "point_count": 163840,
+      "point_order_hash": "40b93145d7c12ab0675b4abce6d19c8907d841d5768ef3f7f310b34129cd5bc4",
+      "sha256": "9b619a3e6e4118348ca0492b995c49a34fe9114b4d99c52cbc06244d284d95bd",
+      "xyz_max": [
+        0.3301242859291532,
+        0.3903382542632841,
+        0.24441522460290482
+      ],
+      "xyz_min": [
+        -0.23650433728879072,
+        -0.29468369721902876,
+        -0.3678104170319981
+      ]
+    }
+  },
+  "genpc_method_valid_substrate": "not_ready",
+  "instrumented_inputs": {
+    "07136_instantmesh.glb": {
+      "path": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\frozen_g_instrumented_07136_v6\\07136\\07136_instantmesh.glb",
+      "sha256": "ebefc5f601cc99e1f60fe672356207798cbe00482ce295c86a6a67b335c2928d",
+      "source": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\frozen_g_substrate_07136_v6\\frozen_inputs\\G_raw_canonical_07136.glb"
+    },
+    "color_point.ply": {
+      "path": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\frozen_g_instrumented_07136_v6\\07136\\color_point.ply",
+      "sha256": "cfee459d78ec37192a6e999c41944d7e6082e5beb0e6157b49812d691f72f01a",
+      "source": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\frozen_g_substrate_07136_v6\\frozen_inputs\\O_raw_registration.ply"
+    }
+  },
+  "instrumented_registration": {
+    "boundary_export": true,
+    "final_transform": {
+      "matrix": [
+        [
+          -0.31593674421310425,
+          0.540470540523529,
+          -0.054348431527614594,
+          0.043768055737018585
+        ],
+        [
+          0.34655311703681946,
+          0.1521378755569458,
+          -0.5016305446624756,
+          0.07648709416389465
+        ],
+        [
+          -0.41828587651252747,
+          -0.2821769714355469,
+          -0.37455469369888306,
+          -0.14765530824661255
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "path": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\frozen_g_instrumented_07136_v6\\final_transform.npy",
+      "sha256": "c99c7288ef2331960f80b152d659f7306d2a8e14e78986809c82de6e9474a6f4"
+    },
+    "fused": {
+      "bytes": 533809,
+      "color_hash": "14825ff942dbfb5528950bf0a5c6bf2fe9d9b2cfe7c72763f39d37511e8d4d34",
+      "color_max": [
+        0.7803921568627451,
+        0.6627450980392157,
+        0.611764705882353
+      ],
+      "color_min": [
+        0.01568627450980392,
+        0.011764705882352941,
+        0.023529411764705882
+      ],
+      "coordinate_hash": "4b80f7855ab57cdb9f71c99c3b6e6bf1a699b0e214cbe77da747d278261b7da2",
+      "geometry_sha256": "873d441721530ef3419595bdd90128b3a982545e8fb395d2d4fa5d00916ec85d",
+      "has_colors": true,
+      "path": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\frozen_g_instrumented_07136_v6\\07136\\07136_fused.ply",
+      "point_count": 19763,
+      "point_order_hash": "4b80f7855ab57cdb9f71c99c3b6e6bf1a699b0e214cbe77da747d278261b7da2",
+      "sha256": "2f0e8400ffe3d91e86ff7bf36460ecc7d9340443e2945ae056893fc2535e5541",
+      "xyz_max": [
+        0.32929697349014725,
+        0.38946881275689577,
+        0.24399231564262258
+      ],
+      "xyz_min": [
+        -0.23608274816957658,
+        -0.29422543779845706,
+        -0.36742125074063364
+      ]
+    },
+    "hook_called": true,
+    "memory": {
+      "peak_allocated_bytes": 28457472,
+      "peak_reserved_bytes": 33554432
+    },
+    "pre_fusion": {
+      "boundary": "immediately before official reg_xyz.remove_close_points(source_pcd, target_pcd, distance_threshold=0.0001)",
+      "distance_threshold": 0.0001,
+      "fusion_rng": {
+        "numpy_state_sha256": "a7f5f1d23152cfb723e961fc900954baa7f903054a4fa500eebefb5d5aff780b",
+        "path": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\frozen_g_instrumented_07136_v6\\pre_fusion\\numpy_rng_before_fusion.pkl",
+        "sha256": "a7f5f1d23152cfb723e961fc900954baa7f903054a4fa500eebefb5d5aff780b"
+      },
+      "hook_behavior": "copy/serialize and fingerprint only; original remove_close_points receives unchanged objects",
+      "identity_pass": true,
+      "matrices": {
+        "best_scales_transformation": [
+          [
+            0.888888888888889,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.8,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.2,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "best_transformation_xyz": [
+          [
+            0.9371538951162265,
+            0.2789870338079825,
+            -0.20954429564059984,
+            0.0004887886830999074
+          ],
+          [
+            -0.32000836068305205,
+            0.9265968005512509,
+            -0.19751713419633585,
+            0.01788795654248146
+          ],
+          [
+            0.13905835451865392,
+            0.2521598782027252,
+            0.9576419841795563,
+            0.04733113615205985
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "coarse_transformation": [
+          [
+            0.8757596917107003,
+            0.2345688584036995,
+            0.24823862117321313,
+            0.11358009597145836
+          ],
+          [
+            -0.19766938155377328,
+            0.9052838514024775,
+            -0.15807581720825362,
+            0.006053774204648637
+          ],
+          [
+            -0.27851710534712376,
+            0.09507154704270994,
+            0.8927427529652525,
+            -0.030418796590176475
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "diff_transform": [
+          [
+            -0.8000866174697876,
+            0.877620279788971,
+            -1.0592783689498901,
+            -0.18851646780967712
+          ],
+          [
+            1.3687019348144531,
+            0.3852779269218445,
+            -0.7145925164222717,
+            -0.19488759338855743
+          ],
+          [
+            -0.13763338327407837,
+            -1.270342469215393,
+            -0.9485324025154114,
+            -0.03686709329485893
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "inverse_best_scales_transformation": [
+          [
+            1.125,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.25,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.8333333333333334,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "inverse_best_transformation_xyz": [
+          [
+            0.9371538951162206,
+            -0.32000836068305233,
+            0.1390583545186552,
+            -0.001315564479930509
+          ],
+          [
+            0.27898703380798034,
+            0.9265968005512479,
+            0.2521598782027218,
+            -0.028646302532819887
+          ],
+          [
+            -0.20954429564059684,
+            -0.19751713419633754,
+            0.9576419841795504,
+            -0.04169068234491421
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "inverse_coarse_transformation": [
+          [
+            0.9911268579795012,
+            -0.22370912353301367,
+            -0.3152072265132645,
+            -0.12080622363487367
+          ],
+          [
+            0.26546950928439933,
+            1.0245403478977655,
+            0.10759568474729203,
+            -0.03308145702343464
+          ],
+          [
+            0.28094004207017687,
+            -0.17889974785904558,
+            1.0103471627039828,
+            -9.263343399461221e-05
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "inverse_diff_transform": [
+          [
+            -0.31593674320116133,
+            0.5404705453903696,
+            -0.054348432290184955,
+            0.0437680562852827
+          ],
+          [
+            0.34655312748595396,
+            0.15213788022369712,
+            -0.5016305410845212,
+            0.0764870968843681
+          ],
+          [
+            -0.4182858822379637,
+            -0.2821769709045667,
+            -0.3745546912798511,
+            -0.14765531057086084
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "inverse_diff_transform_at_boundary": [
+          [
+            -0.31593674421310425,
+            0.540470540523529,
+            -0.054348431527614594,
+            0.043768055737018585
+          ],
+          [
+            0.34655311703681946,
+            0.1521378755569458,
+            -0.5016305446624756,
+            0.07648709416389465
+          ],
+          [
+            -0.41828587651252747,
+            -0.2821769714355469,
+            -0.37455469369888306,
+            -0.14765530824661255
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      "source_after": {
+        "color_hash": "568a4814fb304b7f9fdea793730b82a4f9e40e538c8c30a03ea008cdcd0320d9",
+        "color_max": [
+          0.8,
+          0.7098039215686275,
+          0.6549019607843137
+        ],
+        "color_min": [
+          0.011764705882352941,
+          0.011764705882352941,
+          0.00392156862745098
+        ],
+        "coordinate_hash": "2378c8ae40825f504b3460c09ccce8f6bd2f9a517d3a280b12928003303dfb2b",
+        "has_colors": true,
+        "point_count": 88916,
+        "point_order_hash": "2378c8ae40825f504b3460c09ccce8f6bd2f9a517d3a280b12928003303dfb2b",
+        "xyz_max": [
+          0.18053394559471259,
+          0.3648150788416421,
+          0.15539437730502814
+        ],
+        "xyz_min": [
+          -0.1495770076211167,
+          -0.2154326127507709,
+          -0.3714729806114198
+        ]
+      },
+      "source_before": {
+        "color_hash": "568a4814fb304b7f9fdea793730b82a4f9e40e538c8c30a03ea008cdcd0320d9",
+        "color_max": [
+          0.8,
+          0.7098039215686275,
+          0.6549019607843137
+        ],
+        "color_min": [
+          0.011764705882352941,
+          0.011764705882352941,
+          0.00392156862745098
+        ],
+        "coordinate_hash": "2378c8ae40825f504b3460c09ccce8f6bd2f9a517d3a280b12928003303dfb2b",
+        "has_colors": true,
+        "point_count": 88916,
+        "point_order_hash": "2378c8ae40825f504b3460c09ccce8f6bd2f9a517d3a280b12928003303dfb2b",
+        "xyz_max": [
+          0.18053394559471259,
+          0.3648150788416421,
+          0.15539437730502814
+        ],
+        "xyz_min": [
+          -0.1495770076211167,
+          -0.2154326127507709,
+          -0.3714729806114198
+        ]
+      },
+      "source_exact_sidecar_identity": {
+        "artifact": {
+          "bytes": 1707580,
+          "colors_present": true,
+          "colors_sha256": "568a4814fb304b7f9fdea793730b82a4f9e40e538c8c30a03ea008cdcd0320d9",
+          "path": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\frozen_g_instrumented_07136_v6\\pre_fusion\\O_aligned_exact.npz",
+          "point_count": 88916,
+          "points_sha256": "2378c8ae40825f504b3460c09ccce8f6bd2f9a517d3a280b12928003303dfb2b",
+          "sha256": "31567e843d57cf20e11848bcb6dd5fb644444e5f70cd005547c9a9697fdae3ba"
+        },
+        "colors_sha256": true,
+        "exact_numeric_identity_pass": true,
+        "points_sha256": true
+      },
+      "source_export_identity": {
+        "after_fingerprint": {
+          "color_hash": "568a4814fb304b7f9fdea793730b82a4f9e40e538c8c30a03ea008cdcd0320d9",
+          "coordinate_hash": "2378c8ae40825f504b3460c09ccce8f6bd2f9a517d3a280b12928003303dfb2b",
+          "point_order_hash": "2378c8ae40825f504b3460c09ccce8f6bd2f9a517d3a280b12928003303dfb2b"
+        },
+        "before_fingerprint": {
+          "color_hash": "568a4814fb304b7f9fdea793730b82a4f9e40e538c8c30a03ea008cdcd0320d9",
+          "coordinate_hash": "2378c8ae40825f504b3460c09ccce8f6bd2f9a517d3a280b12928003303dfb2b",
+          "point_order_hash": "2378c8ae40825f504b3460c09ccce8f6bd2f9a517d3a280b12928003303dfb2b"
+        },
+        "colors_checked": false,
+        "colors_unchanged": null,
+        "coordinates_unchanged": true,
+        "exported": {
+          "bytes": 2400940,
+          "color_hash": "568a4814fb304b7f9fdea793730b82a4f9e40e538c8c30a03ea008cdcd0320d9",
+          "color_max": [
+            0.8,
+            0.7098039215686275,
+            0.6549019607843137
+          ],
+          "color_min": [
+            0.011764705882352941,
+            0.011764705882352941,
+            0.00392156862745098
+          ],
+          "coordinate_hash": "2378c8ae40825f504b3460c09ccce8f6bd2f9a517d3a280b12928003303dfb2b",
+          "has_colors": true,
+          "path": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\frozen_g_instrumented_07136_v6\\pre_fusion\\O_aligned.ply",
+          "point_count": 88916,
+          "point_order_hash": "2378c8ae40825f504b3460c09ccce8f6bd2f9a517d3a280b12928003303dfb2b",
+          "sha256": "31124b6b5307848def4e75a8ceb86a72adea53e4e93712ef40fd098e038d7f0a",
+          "xyz_max": [
+            0.18053394559471259,
+            0.3648150788416421,
+            0.15539437730502814
+          ],
+          "xyz_min": [
+            -0.1495770076211167,
+            -0.2154326127507709,
+            -0.3714729806114198
+          ]
+        },
+        "identity_pass": true,
+        "in_memory": {
+          "color_hash": "568a4814fb304b7f9fdea793730b82a4f9e40e538c8c30a03ea008cdcd0320d9",
+          "color_max": [
+            0.8,
+            0.7098039215686275,
+            0.6549019607843137
+          ],
+          "color_min": [
+            0.011764705882352941,
+            0.011764705882352941,
+            0.00392156862745098
+          ],
+          "coordinate_hash": "2378c8ae40825f504b3460c09ccce8f6bd2f9a517d3a280b12928003303dfb2b",
+          "has_colors": true,
+          "point_count": 88916,
+          "point_order_hash": "2378c8ae40825f504b3460c09ccce8f6bd2f9a517d3a280b12928003303dfb2b",
+          "xyz_max": [
+            0.18053394559471259,
+            0.3648150788416421,
+            0.15539437730502814
+          ],
+          "xyz_min": [
+            -0.1495770076211167,
+            -0.2154326127507709,
+            -0.3714729806114198
+          ]
+        },
+        "numeric_identity_pass": true,
+        "point_count_unchanged": true,
+        "point_order_unchanged": true
+      },
+      "source_identity": {
+        "after_fingerprint": {
+          "color_hash": "568a4814fb304b7f9fdea793730b82a4f9e40e538c8c30a03ea008cdcd0320d9",
+          "coordinate_hash": "2378c8ae40825f504b3460c09ccce8f6bd2f9a517d3a280b12928003303dfb2b",
+          "point_order_hash": "2378c8ae40825f504b3460c09ccce8f6bd2f9a517d3a280b12928003303dfb2b"
+        },
+        "before_fingerprint": {
+          "color_hash": "568a4814fb304b7f9fdea793730b82a4f9e40e538c8c30a03ea008cdcd0320d9",
+          "coordinate_hash": "2378c8ae40825f504b3460c09ccce8f6bd2f9a517d3a280b12928003303dfb2b",
+          "point_order_hash": "2378c8ae40825f504b3460c09ccce8f6bd2f9a517d3a280b12928003303dfb2b"
+        },
+        "colors_checked": true,
+        "colors_unchanged": true,
+        "coordinates_unchanged": true,
+        "identity_pass": true,
+        "point_count_unchanged": true,
+        "point_order_unchanged": true
+      },
+      "source_semantics": [
+        "O_raw_registration",
+        "remove_noise_from_point_cloud",
+        "diff_transform",
+        "coarse_transformation",
+        "inverse_coarse_transformation",
+        "inverse_diff_transform",
+        "O_aligned"
+      ],
+      "target_after": {
+        "color_hash": "710d7c6d84a4200c2c95dcdbd77c4270befcb4d57b2c67d6afc7770cfa8ba5e5",
+        "color_max": [
+          0.8010528602032365,
+          0.6934424472720038,
+          0.6166596751884489
+        ],
+        "color_min": [
+          0.02871368009775395,
+          0.028657108430942053,
+          0.030701706752808526
+        ],
+        "coordinate_hash": "40b93145d7c12ab0675b4abce6d19c8907d841d5768ef3f7f310b34129cd5bc4",
+        "has_colors": true,
+        "point_count": 163840,
+        "point_order_hash": "40b93145d7c12ab0675b4abce6d19c8907d841d5768ef3f7f310b34129cd5bc4",
+        "xyz_max": [
+          0.3301242859291532,
+          0.3903382542632841,
+          0.24441522460290482
+        ],
+        "xyz_min": [
+          -0.23650433728879072,
+          -0.29468369721902876,
+          -0.3678104170319981
+        ]
+      },
+      "target_before": {
+        "color_hash": "710d7c6d84a4200c2c95dcdbd77c4270befcb4d57b2c67d6afc7770cfa8ba5e5",
+        "color_max": [
+          0.8010528602032365,
+          0.6934424472720038,
+          0.6166596751884489
+        ],
+        "color_min": [
+          0.02871368009775395,
+          0.028657108430942053,
+          0.030701706752808526
+        ],
+        "coordinate_hash": "40b93145d7c12ab0675b4abce6d19c8907d841d5768ef3f7f310b34129cd5bc4",
+        "has_colors": true,
+        "point_count": 163840,
+        "point_order_hash": "40b93145d7c12ab0675b4abce6d19c8907d841d5768ef3f7f310b34129cd5bc4",
+        "xyz_max": [
+          0.3301242859291532,
+          0.3903382542632841,
+          0.24441522460290482
+        ],
+        "xyz_min": [
+          -0.23650433728879072,
+          -0.29468369721902876,
+          -0.3678104170319981
+        ]
+      },
+      "target_exact_sidecar_identity": {
+        "artifact": {
+          "bytes": 7443405,
+          "colors_present": true,
+          "colors_sha256": "710d7c6d84a4200c2c95dcdbd77c4270befcb4d57b2c67d6afc7770cfa8ba5e5",
+          "path": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\frozen_g_instrumented_07136_v6\\pre_fusion\\G_aligned_exact.npz",
+          "point_count": 163840,
+          "points_sha256": "40b93145d7c12ab0675b4abce6d19c8907d841d5768ef3f7f310b34129cd5bc4",
+          "sha256": "68c44193013ceee48fff1febe5650d79b97d5eb73d415a96f0eb4a579d4d5adc"
+        },
+        "colors_sha256": true,
+        "exact_numeric_identity_pass": true,
+        "points_sha256": true
+      },
+      "target_export_identity": {
+        "after_fingerprint": {
+          "color_hash": "56016330f668021c072bb1cb27aaba5fd058120f2a4d27ee75fd27fd5a1c2402",
+          "coordinate_hash": "40b93145d7c12ab0675b4abce6d19c8907d841d5768ef3f7f310b34129cd5bc4",
+          "point_order_hash": "40b93145d7c12ab0675b4abce6d19c8907d841d5768ef3f7f310b34129cd5bc4"
+        },
+        "before_fingerprint": {
+          "color_hash": "710d7c6d84a4200c2c95dcdbd77c4270befcb4d57b2c67d6afc7770cfa8ba5e5",
+          "coordinate_hash": "40b93145d7c12ab0675b4abce6d19c8907d841d5768ef3f7f310b34129cd5bc4",
+          "point_order_hash": "40b93145d7c12ab0675b4abce6d19c8907d841d5768ef3f7f310b34129cd5bc4"
+        },
+        "colors_checked": false,
+        "colors_unchanged": null,
+        "coordinates_unchanged": true,
+        "exported": {
+          "bytes": 4423889,
+          "color_hash": "56016330f668021c072bb1cb27aaba5fd058120f2a4d27ee75fd27fd5a1c2402",
+          "color_max": [
+            0.8,
+            0.6941176470588235,
+            0.615686274509804
+          ],
+          "color_min": [
+            0.027450980392156862,
+            0.027450980392156862,
+            0.03137254901960784
+          ],
+          "coordinate_hash": "40b93145d7c12ab0675b4abce6d19c8907d841d5768ef3f7f310b34129cd5bc4",
+          "has_colors": true,
+          "path": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\frozen_g_instrumented_07136_v6\\pre_fusion\\G_aligned.ply",
+          "point_count": 163840,
+          "point_order_hash": "40b93145d7c12ab0675b4abce6d19c8907d841d5768ef3f7f310b34129cd5bc4",
+          "sha256": "9b619a3e6e4118348ca0492b995c49a34fe9114b4d99c52cbc06244d284d95bd",
+          "xyz_max": [
+            0.3301242859291532,
+            0.3903382542632841,
+            0.24441522460290482
+          ],
+          "xyz_min": [
+            -0.23650433728879072,
+            -0.29468369721902876,
+            -0.3678104170319981
+          ]
+        },
+        "identity_pass": true,
+        "in_memory": {
+          "color_hash": "710d7c6d84a4200c2c95dcdbd77c4270befcb4d57b2c67d6afc7770cfa8ba5e5",
+          "color_max": [
+            0.8010528602032365,
+            0.6934424472720038,
+            0.6166596751884489
+          ],
+          "color_min": [
+            0.02871368009775395,
+            0.028657108430942053,
+            0.030701706752808526
+          ],
+          "coordinate_hash": "40b93145d7c12ab0675b4abce6d19c8907d841d5768ef3f7f310b34129cd5bc4",
+          "has_colors": true,
+          "point_count": 163840,
+          "point_order_hash": "40b93145d7c12ab0675b4abce6d19c8907d841d5768ef3f7f310b34129cd5bc4",
+          "xyz_max": [
+            0.3301242859291532,
+            0.3903382542632841,
+            0.24441522460290482
+          ],
+          "xyz_min": [
+            -0.23650433728879072,
+            -0.29468369721902876,
+            -0.3678104170319981
+          ]
+        },
+        "numeric_identity_pass": true,
+        "point_count_unchanged": true,
+        "point_order_unchanged": true
+      },
+      "target_identity": {
+        "after_fingerprint": {
+          "color_hash": "710d7c6d84a4200c2c95dcdbd77c4270befcb4d57b2c67d6afc7770cfa8ba5e5",
+          "coordinate_hash": "40b93145d7c12ab0675b4abce6d19c8907d841d5768ef3f7f310b34129cd5bc4",
+          "point_order_hash": "40b93145d7c12ab0675b4abce6d19c8907d841d5768ef3f7f310b34129cd5bc4"
+        },
+        "before_fingerprint": {
+          "color_hash": "710d7c6d84a4200c2c95dcdbd77c4270befcb4d57b2c67d6afc7770cfa8ba5e5",
+          "coordinate_hash": "40b93145d7c12ab0675b4abce6d19c8907d841d5768ef3f7f310b34129cd5bc4",
+          "point_order_hash": "40b93145d7c12ab0675b4abce6d19c8907d841d5768ef3f7f310b34129cd5bc4"
+        },
+        "colors_checked": true,
+        "colors_unchanged": true,
+        "coordinates_unchanged": true,
+        "identity_pass": true,
+        "point_count_unchanged": true,
+        "point_order_unchanged": true
+      },
+      "target_semantics": [
+        "G_raw_canonical sampled by official glb2point",
+        "normalize_numpy(range=0.5)",
+        "InstantMesh x-axis +90 degree rotation",
+        "InstantMesh y-axis +90 degree rotation",
+        "inverse_best_scales_transformation",
+        "inverse_best_transformation_xyz",
+        "inverse_coarse_transformation",
+        "inverse_diff_transform",
+        "G_aligned"
+      ]
+    },
+    "rng_after_registration": {
+      "declared_seed": 42,
+      "numpy": {
+        "state_sha256": "31fb34530fef238f317194d16e235c3ea2758faabea7d4aca37e6ae90b6b1cdc"
+      },
+      "python": {
+        "state_sha256": "21feb557e3da2a52be59d0a03105f7314322a903b4cca49a0e125c43cf2885d0"
+      },
+      "torch_cpu": {
+        "initial_seed": 42,
+        "state_sha256": "5feb54a46230d321d888e9b43cf5a57492665f199e4377408d79ee460e36679c"
+      },
+      "torch_cuda": {
+        "initial_seed": 42,
+        "state_sha256": [
+          "aefdce03def94ffed42159e55677ec20e91200e1981f25b1f271b6fd99c3c263"
+        ]
+      }
+    },
+    "rng_before_registration": {
+      "declared_seed": 42,
+      "numpy": {
+        "state_sha256": "a7f5f1d23152cfb723e961fc900954baa7f903054a4fa500eebefb5d5aff780b"
+      },
+      "python": {
+        "state_sha256": "21feb557e3da2a52be59d0a03105f7314322a903b4cca49a0e125c43cf2885d0"
+      },
+      "torch_cpu": {
+        "initial_seed": 42,
+        "state_sha256": "5feb54a46230d321d888e9b43cf5a57492665f199e4377408d79ee460e36679c"
+      },
+      "torch_cuda": {
+        "initial_seed": 42,
+        "state_sha256": [
+          "aefdce03def94ffed42159e55677ec20e91200e1981f25b1f271b6fd99c3c263"
+        ]
+      }
+    },
+    "status": "completed"
+  },
+  "metric_evaluation": {
+    "fps_points": 16384,
+    "seed_reset_per_output": 42
+  },
+  "metrics": {
+    "control": {
+      "cd": 0.051519230008125305,
+      "emd": 0.06720459461212158
+    },
+    "fusion_only": {
+      "cd": 0.05543572083115578,
+      "emd": 0.07727376371622086
+    },
+    "instrumented": {
+      "cd": 0.05543572083115578,
+      "emd": 0.0769357979297638
+    }
+  },
+  "official_upstream_commit": "bac9e7b59f4fea0eaaa936f24ef60f342f349829",
+  "read_only_hook_identity_pass": true,
+  "registration_configuration": {
+    "cd_inv_weight": 0.5,
+    "dataset": "redwood",
+    "device": "cuda",
+    "diff_init": true,
+    "reg_fine_xyz": true,
+    "remove_close_points_distance_threshold": 0.0001
+  },
+  "registration_reached_boundary": true,
+  "run_id": "frozen_g_substrate_07136_20260913_v6",
+  "same_run_fusion_comparison": {
+    "cd_abs_diff": 0.0,
+    "emd_abs_diff": 0.00033796578645706177,
+    "fusion_only_final": {
+      "bytes": 533809,
+      "color_hash": "14825ff942dbfb5528950bf0a5c6bf2fe9d9b2cfe7c72763f39d37511e8d4d34",
+      "color_max": [
+        0.7803921568627451,
+        0.6627450980392157,
+        0.611764705882353
+      ],
+      "color_min": [
+        0.01568627450980392,
+        0.011764705882352941,
+        0.023529411764705882
+      ],
+      "coordinate_hash": "4b80f7855ab57cdb9f71c99c3b6e6bf1a699b0e214cbe77da747d278261b7da2",
+      "has_colors": true,
+      "path": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\frozen_g_fusion_replay_07136_v6\\07136\\07136_fused.ply",
+      "point_count": 19763,
+      "point_order_hash": "4b80f7855ab57cdb9f71c99c3b6e6bf1a699b0e214cbe77da747d278261b7da2",
+      "sha256": "2f0e8400ffe3d91e86ff7bf36460ecc7d9340443e2945ae056893fc2535e5541",
+      "xyz_max": [
+        0.32929697349014725,
+        0.38946881275689577,
+        0.24399231564262258
+      ],
+      "xyz_min": [
+        -0.23608274816957658,
+        -0.29422543779845706,
+        -0.36742125074063364
+      ]
+    },
+    "instrumented_final": {
+      "bytes": 533809,
+      "color_hash": "14825ff942dbfb5528950bf0a5c6bf2fe9d9b2cfe7c72763f39d37511e8d4d34",
+      "color_max": [
+        0.7803921568627451,
+        0.6627450980392157,
+        0.611764705882353
+      ],
+      "color_min": [
+        0.01568627450980392,
+        0.011764705882352941,
+        0.023529411764705882
+      ],
+      "coordinate_hash": "4b80f7855ab57cdb9f71c99c3b6e6bf1a699b0e214cbe77da747d278261b7da2",
+      "has_colors": true,
+      "path": "C:\\Projects\\Kill-OSN-GS\\reference_models\\genpc\\runs\\frozen_g_instrumented_07136_v6\\07136\\07136_fused.ply",
+      "point_count": 19763,
+      "point_order_hash": "4b80f7855ab57cdb9f71c99c3b6e6bf1a699b0e214cbe77da747d278261b7da2",
+      "sha256": "2f0e8400ffe3d91e86ff7bf36460ecc7d9340443e2945ae056893fc2535e5541",
+      "xyz_max": [
+        0.32929697349014725,
+        0.38946881275689577,
+        0.24399231564262258
+      ],
+      "xyz_min": [
+        -0.23608274816957658,
+        -0.29422543779845706,
+        -0.36742125074063364
+      ]
+    },
+    "metric_tolerance": 0.00025,
+    "metric_tolerance_basis": "read-only repeated evaluation of the same artifact eight times on this RTX 5080 measured GPU EMD range 2.1486e-4; 2.5e-4 is a declared envelope, geometry remains exact",
+    "metrics_identity_pass": false,
+    "numeric_geometry_identity": {
+      "after_fingerprint": {
+        "color_hash": "14825ff942dbfb5528950bf0a5c6bf2fe9d9b2cfe7c72763f39d37511e8d4d34",
+        "coordinate_hash": "4b80f7855ab57cdb9f71c99c3b6e6bf1a699b0e214cbe77da747d278261b7da2",
+        "point_order_hash": "4b80f7855ab57cdb9f71c99c3b6e6bf1a699b0e214cbe77da747d278261b7da2"
+      },
+      "before_fingerprint": {
+        "color_hash": "14825ff942dbfb5528950bf0a5c6bf2fe9d9b2cfe7c72763f39d37511e8d4d34",
+        "coordinate_hash": "4b80f7855ab57cdb9f71c99c3b6e6bf1a699b0e214cbe77da747d278261b7da2",
+        "point_order_hash": "4b80f7855ab57cdb9f71c99c3b6e6bf1a699b0e214cbe77da747d278261b7da2"
+      },
+      "colors_checked": true,
+      "colors_unchanged": true,
+      "coordinates_unchanged": true,
+      "identity_pass": true,
+      "point_count_unchanged": true,
+      "point_order_unchanged": true
+    },
+    "point_accounting_match": true,
+    "sufficiency_pass": false
+  },
+  "seed": 42,
+  "started_utc": "2026-09-12T16:59:41Z",
+  "status": "completed",
+  "structural_association": "not_defined"
+}

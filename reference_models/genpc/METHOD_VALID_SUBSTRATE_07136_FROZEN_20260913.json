@@ -1,0 +1,206 @@
+{
+  "manifest_version": 1,
+  "run_id": "frozen_g_substrate_07136_20260913_v6",
+  "status": "ready",
+  "exact_published_baseline": "blocked",
+  "genpc_method_valid_substrate": "ready",
+  "experiment1_run": false,
+  "structural_association": "not_defined",
+  "historical_worklog_9": {
+    "path": "docs/worklogs/9_GenPC_Instrumented_Equivalence_20260912.md",
+    "preserved": true,
+    "previous_equivalence_pass": false,
+    "first_observed_divergence": "InstantMesh GLB before the fusion-boundary hook",
+    "interpretation": "historical generator replay result; not an instrumentation failure"
+  },
+  "canonical_selection": {
+    "rule": "first chronologically successful method-valid baseline lineage; no CD/EMD quality selection",
+    "source_run": "baseline_07136",
+    "generator_rerun_in_this_batch": false
+  },
+  "official_upstream": {
+    "path": "reference_models/genpc/upstream",
+    "commit": "bac9e7b59f4fea0eaaa936f24ef60f342f349829",
+    "working_tree_verified_clean": true
+  },
+  "canonical_artifacts": {
+    "G_raw_canonical": {
+      "source_path": "reference_models/genpc/runs/baseline_07136/07136/07136_instantmesh.glb",
+      "frozen_path": "reference_models/genpc/runs/frozen_g_substrate_07136_v6/frozen_inputs/G_raw_canonical_07136.glb",
+      "sha256": "ebefc5f601cc99e1f60fe672356207798cbe00482ce295c86a6a67b335c2928d",
+      "geometry_sha256": "654fe0872e513fc74daba04994aff52845c58decbb7c25321086922b91daf75f",
+      "bytes": 1681376,
+      "mesh_count": 1,
+      "vertex_count": 42012,
+      "face_count": 84016
+    },
+    "O_raw_registration": {
+      "source_path": "reference_models/genpc/runs/baseline_07136/07136/color_point.ply",
+      "frozen_path": "reference_models/genpc/runs/frozen_g_substrate_07136_v6/frozen_inputs/O_raw_registration.ply",
+      "sha256": "cfee459d78ec37192a6e999c41944d7e6082e5beb0e6157b49812d691f72f01a",
+      "geometry_sha256": "8b524609bcc94d484adf766a2cd9be1e9c5617a4859a7233a099074fd25cc641",
+      "bytes": 2603089,
+      "point_count": 96403
+    },
+    "GT": {
+      "source_path": "reference_models/genpc/upstream/data/GT/07136.ply",
+      "frozen_path": "reference_models/genpc/runs/frozen_g_substrate_07136_v6/frozen_inputs/GT_07136.ply",
+      "sha256": "94c1d6e37ed3a282233d29882c45879b804902cf51a050a8859ed0d9f57ded72",
+      "geometry_sha256": "07cf82ea6730117243b4f530fc36b41a7d76b8fb7054cee4bb017eed71a1ec61",
+      "bytes": 1850740,
+      "point_count": 77108
+    },
+    "source_raw_observation": {
+      "path": "reference_models/genpc/upstream/data/07136.ply",
+      "sha256": "c39836b809caad0257323b47cbc29aba0da9d2d1ecc32a8d51c39edb84f021cc"
+    }
+  },
+  "generator_provenance": {
+    "instantmesh_config_path": "reference_models/genpc/dependencies/InstantMesh/configs/instant-mesh-base.yaml",
+    "instantmesh_config_sha256": "3f0786add80b310ee1c46f8790e2c796d3c2c0cb20808972a4622e62ef962d8d",
+    "generative_model": "instantmesh",
+    "diffusion_steps": 75,
+    "seed": 42,
+    "zero123_input_img_sam_sha256": "610f5a77696bc3cc6a942c9b1cd7761084d4db348cda1a6113a2de5254102690",
+    "zero123_output_sha256": "0402eb1cfee08dfef712004b411a4f54af061e6781a936037d30403f1fa955e7",
+    "baseline_img_sha256": "5f294d735c1107cf887905f969659bf69a2f6a3788cd798a27a31ae37ee2bf1a",
+    "rmbg_revision": "5df4c9c76d8170882c34f6986e848ee07fd0ba43",
+    "inpainting_deviation": "exact published depth-inpainting implementation unavailable; exact published baseline remains blocked"
+  },
+  "registration_configuration": {
+    "dataset": "redwood",
+    "device": "cuda",
+    "cd_inv_weight": 0.5,
+    "diff_init": true,
+    "reg_fine_xyz": true,
+    "glb2point_num_points": 163840,
+    "remove_close_points_distance_threshold": 0.0001
+  },
+  "fusion_configuration": {
+    "fps_requested": 20000,
+    "noise_removal_std_ratio": 2.5,
+    "author_metric_fps_points": 16384,
+    "future_experiment1_start": "frozen instrumented pre_fusion/O_aligned_exact.npz and G_aligned_exact.npz"
+  },
+  "rng_and_determinism": {
+    "declared_seed": 42,
+    "control_and_instrumented_registration_before_state": {
+      "python_state_sha256": "21feb557e3da2a52be59d0a03105f7314322a903b4cca49a0e125c43cf2885d0",
+      "numpy_state_sha256": "a7f5f1d23152cfb723e961fc900954baa7f903054a4fa500eebefb5d5aff780b",
+      "torch_cpu_state_sha256": "5feb54a46230d321d888e9b43cf5a57492665f199e4377408d79ee460e36679c",
+      "torch_cuda_state_sha256": "aefdce03def94ffed42159e55677ec20e91200e1981f25b1f271b6fd99c3c263"
+    },
+    "fusion_boundary_numpy_state_sha256": "a7f5f1d23152cfb723e961fc900954baa7f903054a4fa500eebefb5d5aff780b",
+    "fusion_boundary_rng_path": "reference_models/genpc/runs/frozen_g_instrumented_07136_v6/pre_fusion/numpy_rng_before_fusion.pkl",
+    "deterministic_settings": {
+      "torch_deterministic_algorithms_enabled": false,
+      "cudnn_deterministic": false,
+      "cudnn_benchmark": false,
+      "cuda_matmul_allow_tf32": false,
+      "cudnn_allow_tf32": true
+    }
+  },
+  "boundary_capture": {
+    "lineage_path": "reference_models/genpc/runs/frozen_g_instrumented_07136_v6/pre_fusion/transform_lineage.json",
+    "lineage_sha256": "e8c908e18e2354e28453f425050f6c05ccc3585619db2b29dffcf3ab8e5b1b0b",
+    "O_aligned_ply": {
+      "path": "reference_models/genpc/runs/frozen_g_instrumented_07136_v6/pre_fusion/O_aligned.ply",
+      "sha256": "31124b6b5307848def4e75a8ceb86a72adea53e4e93712ef40fd098e038d7f0a",
+      "point_count": 88916,
+      "coordinate_hash": "2378c8ae40825f504b3460c09ccce8f6bd2f9a517d3a280b12928003303dfb2b",
+      "color_hash": "568a4814fb304b7f9fdea793730b82a4f9e40e538c8c30a03ea008cdcd0320d9"
+    },
+    "G_aligned_ply": {
+      "path": "reference_models/genpc/runs/frozen_g_instrumented_07136_v6/pre_fusion/G_aligned.ply",
+      "sha256": "9b619a3e6e4118348ca0492b995c49a34fe9114b4d99c52cbc06244d284d95bd",
+      "point_count": 163840,
+      "coordinate_hash": "40b93145d7c12ab0675b4abce6d19c8907d841d5768ef3f7f310b34129cd5bc4",
+      "color_hash": "710d7c6d84a4200c2c95dcdbd77c4270befcb4d57b2c67d6afc7770cfa8ba5e5"
+    },
+    "O_aligned_exact_sidecar": {
+      "path": "reference_models/genpc/runs/frozen_g_instrumented_07136_v6/pre_fusion/O_aligned_exact.npz",
+      "sha256": "31567e843d57cf20e11848bcb6dd5fb644444e5f70cd005547c9a9697fdae3ba"
+    },
+    "G_aligned_exact_sidecar": {
+      "path": "reference_models/genpc/runs/frozen_g_instrumented_07136_v6/pre_fusion/G_aligned_exact.npz",
+      "sha256": "68c44193013ceee48fff1febe5650d79b97d5eb73d415a96f0eb4a579d4d5adc"
+    },
+    "read_only_hook_called_once": true,
+    "pre_post_O_identity": true,
+    "pre_post_G_identity": true,
+    "exported_O_coordinate_identity": true,
+    "exported_G_coordinate_identity": true,
+    "lossless_O_sidecar_identity": true,
+    "lossless_G_sidecar_identity": true,
+    "complete_transform_lineage": true,
+    "transform_names": [
+      "diff_transform",
+      "coarse_transformation",
+      "best_scales_transformation",
+      "best_transformation_xyz",
+      "inverse_diff_transform_at_boundary"
+    ],
+    "ply_color_note": "Open3D PLY serialization quantizes colors; exact NPZ sidecars preserve the in-memory float arrays losslessly."
+  },
+  "registration_results": {
+    "control": {
+      "root": "reference_models/genpc/runs/frozen_g_control_07136_v6",
+      "fused_path": "reference_models/genpc/runs/frozen_g_control_07136_v6/07136/07136_fused.ply",
+      "fused_sha256": "2d74001bfe71cebb5f4dbddefad22b4a5727c89cc41a4bcef1861dbee204dad4",
+      "final_transform_path": "reference_models/genpc/runs/frozen_g_control_07136_v6/final_transform.npy",
+      "final_transform_sha256": "d6eed19f00bd5bdf042fb2bc90ed05c2f6ae9048eb43d51a3b1acdf3e957b6eb",
+      "point_count": 19703,
+      "cd": 0.0515192300081253,
+      "emd": 0.0672045946121216,
+      "boundary_export": false
+    },
+    "instrumented": {
+      "root": "reference_models/genpc/runs/frozen_g_instrumented_07136_v6",
+      "fused_path": "reference_models/genpc/runs/frozen_g_instrumented_07136_v6/07136/07136_fused.ply",
+      "fused_sha256": "2f0e8400ffe3d91e86ff7bf36460ecc7d9340443e2945ae056893fc2535e5541",
+      "point_count": 19763,
+      "cd": 0.0554357208311558,
+      "emd": 0.0769357979297638,
+      "final_transform_sha256": "c99c7288ef2331960f80b152d659f7306d2a8e14e78986809c82de6e9474a6f4",
+      "boundary_export": true
+    },
+    "fusion_only_replay": {
+      "root": "reference_models/genpc/runs/frozen_g_fusion_replay_07136_v6",
+      "fused_path": "reference_models/genpc/runs/frozen_g_fusion_replay_07136_v6/07136/07136_fused.ply",
+      "fused_sha256": "2f0e8400ffe3d91e86ff7bf36460ecc7d9340443e2945ae056893fc2535e5541",
+      "point_count": 19763,
+      "cd": 0.0554357208311558,
+      "emd": 0.0772737637162209,
+      "point_accounting": {
+        "source_count": 88916,
+        "target_count": 163840,
+        "filtered_target_count": 152968,
+        "pre_fps_fused_count": 241884,
+        "fps_selected_count": 20000,
+        "final_count": 19763
+      }
+    }
+  },
+  "same_run_comparison": {
+    "geometry_identity_pass": true,
+    "point_accounting_pass": true,
+    "instrumented_and_replay_fused_byte_sha256_equal": true,
+    "cd_abs_diff_from_independent_calls": 0.0,
+    "emd_abs_diff_from_independent_calls": 0.000337965786457062,
+    "metric_comparison_policy": "Exact common fused point-array identity proves the CD/EMD inputs agree; independent GPU EMD calls are retained as diagnostics because the evaluator is nondeterministic.",
+    "metrics_identity_pass": true,
+    "fusion_sufficiency_pass": true
+  },
+  "evidence": {
+    "result_path": "reference_models/genpc/runs/frozen_g_substrate_07136_v6/frozen_g_substrate_result_final.json",
+    "raw_run_result_path": "reference_models/genpc/runs/frozen_g_substrate_07136_v6/frozen_g_substrate_result.json",
+    "runner_path": "reference_models/genpc/run_frozen_g_substrate_07136.py",
+    "finalizer_path": "reference_models/genpc/finalize_frozen_g_substrate_07136.py",
+    "experiment1_variable_introduced": false
+  },
+  "final_status": {
+    "exact_published_baseline": "BLOCKED",
+    "genpc_method_valid_substrate": "READY",
+    "experiment1": "NOT RUN"
+  }
+}
