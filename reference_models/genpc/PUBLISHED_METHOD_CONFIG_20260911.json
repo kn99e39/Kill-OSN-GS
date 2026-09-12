@@ -1,0 +1,59 @@
+{
+  "schema": "kill-osn-gs/genpc-published-method-config/v1",
+  "status": "CONFIGURATION_ONLY_NOT_EXECUTED",
+  "source": {
+    "repository": "https://github.com/liannuaa/GenPC",
+    "commit": "bac9e7b59f4fea0eaaa936f24ef60f342f349829",
+    "checkout": "reference_models/genpc/upstream",
+    "pristine": true
+  },
+  "published_contract": {
+    "depth_prompting": {
+      "virtual_cameras": 2048,
+      "camera_resolution": 256,
+      "camera_distance": 1.6,
+      "fov_degrees": 49.1,
+      "dense_point_size": 1,
+      "sparse_point_size": 2,
+      "mask_pixel_size_rate": 3,
+      "inpainting_resolution": [256, 256]
+    },
+    "controlnet": {
+      "implementation": "author GenPC tools/controlnet_depth.py",
+      "base_model": "stabilityai/stable-diffusion-xl-base-1.0",
+      "control_model": "xinsir/controlnet-depth-sdxl-1.0",
+      "vae": "madebyollin/sdxl-vae-fp16-fix",
+      "inference_steps": 30,
+      "conditioning_scale": 0.99,
+      "output_resolution": [1024, 1024]
+    },
+    "image_to_3d": {
+      "implementation": "author GenPC tools/instantmesh.py + TencentARC/InstantMesh src",
+      "config": "configs/instant-mesh-base.yaml",
+      "diffusion_steps": 75,
+      "scale": 1.0,
+      "distance": 4.5,
+      "views": 6,
+      "multiview_model": "sudo-ai/zero123plus-v1.2",
+      "custom_unet": "TencentARC/InstantMesh:diffusion_pytorch_model.bin",
+      "reconstruction_checkpoint": "TencentARC/InstantMesh:instant_mesh_base.ckpt",
+      "encoder": "facebook/dino-vitb16"
+    },
+    "refinement": {
+      "enabled": false,
+      "reason": "The requested batch freezes the published pre-fusion substrate before Experiment 1; no refining or tuning is introduced."
+    }
+  },
+  "external_orchestration_requirements": [
+    "Call the published image-generation component; pristine main.py passes img_gen=False.",
+    "Pass conditioning_scale=0.99; the published wrapper default is 1.0 and main.py does not override it.",
+    "Set generate_res=1024; pristine config.yaml currently says 512.",
+    "Resolve the paper-to-code depth inpainting adapter before inference; cv2 is not an accepted silent substitute."
+  ],
+  "experiment_boundary": {
+    "run_experiment_1": false,
+    "create_association_conditions": false,
+    "instrument_prefusion": false,
+    "freeze_og": false
+  }
+}

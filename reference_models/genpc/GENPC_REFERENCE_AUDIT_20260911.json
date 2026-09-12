@@ -1,0 +1,180 @@
+{
+  "schema": "kill-osn-gs/genpc-real-substrate-audit/v1",
+  "collected_on": "2026-09-11",
+  "final_classification": "GENPC_REAL_SUBSTRATE_NOT_READY",
+  "scope": {
+    "primary_host": "MAIN RTX 5080 workstation",
+    "primary_target": "CVPR 2025 published GenPC path using ControlNet and InstantMesh",
+    "excluded": [
+      "Experiment 1 execution",
+      "association conditions",
+      "Structural Attachment",
+      "graph matching",
+      "NURBS",
+      "seed search",
+      "method tuning"
+    ]
+  },
+  "host": {
+    "os": "Microsoft Windows 11 Pro 10.0.26200",
+    "gpu": "NVIDIA GeForce RTX 5080",
+    "vram_mib": 16303,
+    "driver": "596.49",
+    "driver_reported_cuda": "13.2",
+    "nvcc": "13.3.33",
+    "system_ram_mb": 65140,
+    "free_ram_mb_at_check": 51029,
+    "compiler": {
+      "msvc_cl": "NOT FOUND",
+      "nvdiffrast_build": "FAILED: CUDA 13.3 toolchain mismatched PyTorch CUDA 12.8; cl also unavailable"
+    },
+    "free_disk_bytes_from_prior_assessment": {
+      "C": 762549760000,
+      "D": 1036006502400
+    }
+  },
+  "runtime": {
+    "environment": "reference_models/genpc/env-blackwell",
+    "python": "3.11.9",
+    "published_python": "3.10",
+    "pytorch": "2.8.0+cu128",
+    "torchvision": "0.23.0+cu128",
+    "torchaudio": "2.8.0+cu128",
+    "torch_cuda": "12.8",
+    "hardware_compatibility_deviation": "PyTorch 2.8/cu128 was selected instead of GenPC README 2.6/cu126 so the wheel includes sm_120 for Blackwell.",
+    "runtime_deviation": "Python 3.11 was used because Python 3.10/Conda was not available on the host; method semantics were not changed.",
+    "blackwell_probe": {
+      "cuda_available": true,
+      "device_count": 1,
+      "capability": [12, 0],
+      "arch_list_includes_sm_120": true,
+      "device_total_memory_bytes": 17094475776
+    }
+  },
+  "source": {
+    "genpc": {
+      "remote": "https://github.com/liannuaa/GenPC.git",
+      "commit": "bac9e7b59f4fea0eaaa936f24ef60f342f349829",
+      "branch_state": "detached HEAD",
+      "worktree": "clean",
+      "license": "MIT",
+      "path": "reference_models/genpc/upstream"
+    },
+    "instantmesh": {
+      "remote": "https://github.com/TencentARC/InstantMesh.git",
+      "commit": "08822c52fdc399b93ea00e4fa9e596344ed52ccc",
+      "branch_state": "main",
+      "worktree": "clean",
+      "path": "reference_models/genpc/dependencies/InstantMesh"
+    },
+    "ddnm": {
+      "remote": "https://github.com/wyhuai/DDNM.git",
+      "commit": "00b58eac7843a4c99114fd8fa42da7aa2b6808af",
+      "branch_state": "main",
+      "worktree": "clean",
+      "path": "reference_models/genpc/dependencies/DDNM"
+    }
+  },
+  "method_mapping": {
+    "paper_contract": "reference_models/genpc/PUBLISHED_METHOD_CONFIG_20260911.json",
+    "depth_inpainting": {
+      "paper_reference": "pre-trained diffusion inpainting model at 256x256; main paper reference [11] is guided diffusion",
+      "candidate_author_code": "wyhuai/DDNM",
+      "candidate_checkpoint": "https://openaipublic.blob.core.windows.net/diffusion/jul-2021/256x256_diffusion_uncond.pt",
+      "genpc_expected_import": "models.DDNM.ddnm_inpainting.Inpainter",
+      "genpc_expected_import_present": false,
+      "classification": "REPRODUCTION_AMBIGUITY_BLOCKED"
+    },
+    "controlnet": {
+      "source_path": "reference_models/genpc/upstream/tools/controlnet_depth.py",
+      "paper_settings": {
+        "steps": 30,
+        "conditioning_scale": 0.99,
+        "output_resolution": [1024, 1024]
+      },
+      "load_gate": "PASS",
+      "load_peak_allocated_bytes": 9617387008,
+      "load_peak_reserved_bytes": 9925820416,
+      "generation_run": false
+    },
+    "instantmesh": {
+      "source_path": "reference_models/genpc/upstream/tools/instantmesh.py",
+      "paper_settings": {
+        "config": "instant-mesh-base",
+        "diffusion_steps": 75,
+        "scale": 1.0,
+        "distance": 4.5,
+        "views": 6
+      },
+      "required_external_src": "reference_models/genpc/dependencies/InstantMesh/src",
+      "load_gate": "BLOCKED_NVDIFFRAST_BUILD",
+      "load_peak_allocated_bytes": 0,
+      "load_peak_reserved_bytes": 0,
+      "generation_run": false
+    }
+  },
+  "entrypoint_audit": {
+    "source": "reference_models/genpc/upstream/main.py",
+    "observed_call": "dp.getImage(..., depth_gen=True, img_gen=False)",
+    "downstream_requirement": "ScaleAdapter depth path expects workspace/<flag>/img.png",
+    "classification": "ENTRYPOINT_ORCHESTRATION_FIX_REQUIRED",
+    "pristine_source_modified": false,
+    "fix_applied": false
+  },
+  "selected_sample": {
+    "selection_rule": "The single sample hard-coded by the official main.py entry point",
+    "sample_id": "07136",
+    "category": "sofa",
+    "input_ply": "reference_models/genpc/upstream/data/07136.ply",
+    "input_sha256": "c39836b809caad0257323b47cbc29aba0da9d2d1ecc32a8d51c39edb84f021cc",
+    "gt_ply": "reference_models/genpc/upstream/data/GT/07136.ply",
+    "gt_sha256": "94c1d6e37ed3a282233d29882c45879b804902cf51a050a8859ed0d9f57ded72"
+  },
+  "prefusion_boundary": {
+    "source": "reference_models/genpc/upstream/reg_xyz.py",
+    "identified_before": "filtered_target_pcd = remove_close_points(source_pcd, target_pcd, distance_threshold=0.0001)",
+    "source_pcd_semantics": "observed partial after official pose/scale transforms",
+    "target_pcd_semantics": "generated shape after normalization, InstantMesh orientation correction, coarse scale/ICP, XYZ refinement, and inverse transforms",
+    "instrumented": false,
+    "reason": "The direction requires successful published baseline reproduction before instrumentation."
+  },
+  "transform_lineage_identified": [
+    "object_pose_optimization returns a differentiable pose transform; its inverse is applied to source_pcd",
+    "target_pcd is sampled from the generated GLB and normalized to range 0.5",
+    "InstantMesh target receives x-axis and y-axis 90 degree rotations",
+    "coarse isotropic ICP scale search is inverted onto target_pcd",
+    "optional XYZ scale search and transformation are inverted onto target_pcd",
+    "inverse coarse transform and inverse differentiable pose transform return both states to the input frame"
+  ],
+  "gates": {
+    "blackwell_runtime": "PASS",
+    "depth_inpainting_component": "BLOCKED_REPRODUCTION_AMBIGUITY",
+    "controlnet_loading": "PASS",
+    "instantmesh_loading": "BLOCKED_NVDIFFRAST_BUILD",
+    "one_published_baseline": "NOT_RUN",
+    "prefusion_export": "NOT_RUN",
+    "instrumentation_equivalence": "NOT_RUN",
+    "frozen_real_og": "NOT_CREATED"
+  },
+  "baseline": {
+    "classification": "GENPC_PUBLISHED_BASELINE_BLOCKED",
+    "output": null,
+    "cd": null,
+    "emd": null,
+    "runtime_seconds": null,
+    "warnings": [
+      "ControlNet load emitted a non-fatal ignored safety_checker keyword warning.",
+      "No completion inference or metric calculation was executed."
+    ]
+  },
+  "remaining_blockers": [
+    "Provide a faithful GenPC-compatible DDNM inpainting adapter and checkpoint mapping, or author-confirmed replacement.",
+    "Provide a Windows-buildable nvdiffrast path using a matching CUDA toolkit and MSVC, or use an approved CUDA-capable Linux/WSL environment.",
+    "Resolve Kaolin availability for the Blackwell-compatible PyTorch stack; the GenPC camera path imports Kaolin and nvdiffrast.",
+    "Apply and separately record the minimal orchestration correction for img_gen and ControlNet scale/resolution only after the above gates close."
+  ],
+  "frozen_artifacts": {
+    "created": false,
+    "reason": "No baseline result, O_aligned, G_aligned, transform export, or metric equivalence result exists."
+  }
+}
