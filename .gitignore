@@ -18,6 +18,9 @@ reference_models/genpc/model_cache/
 reference_models/genpc/toolchain/downloads/
 reference_models/genpc/runs/
 
+# Local review exports generated from frozen experiment artifacts.
+output/
+
 # One-off local GenPC probes and their dated logs.
 reference_models/genpc/audit_07136_baseline.py
 reference_models/genpc/debug_instantmesh_import_07136.py
