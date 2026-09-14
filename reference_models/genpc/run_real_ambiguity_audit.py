@@ -96,9 +96,17 @@ def run(sample: str) -> dict[str, Any]:
         raise RuntimeError(f"refusing to reuse sample run directory: {RUN_ROOT / sample}")
     sys.path.insert(0, str(ROOT))
     sys.path.insert(0, str(UPSTREAM))
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    if hasattr(sys.stderr, "reconfigure"):
+        sys.stderr.reconfigure(encoding="utf-8", errors="replace")
     from run_method_valid_baseline_07136 import configure_cuda_runtime, install_rmbg_revision_compat, load_cfg, set_seed
 
     configure_cuda_runtime()
+    # The verified method-valid environment is fully cached.  Keep it
+    # offline so diffusers resolves the frozen scheduler cache rather than
+    # turning a one-time audit run into a network retry loop.
+    os.environ["HF_HUB_OFFLINE"] = "1"
     record = input_record(sample)
     input_path = UPSTREAM / "data" / f"{sample}.ply"
     gt_path = UPSTREAM / "data" / "GT" / f"{sample}.ply"
@@ -108,6 +116,7 @@ def run(sample: str) -> dict[str, Any]:
     output = run_dir / sample
     run_dir.mkdir(parents=True, exist_ok=False)
     output.mkdir()
+    os.environ["HF_MODULES_CACHE"] = str(run_dir / "hf_modules_cache")
     result: dict[str, Any] = {"sample": sample, "status": "started", "seed": 42, "input": record, "official_upstream_commit": UPSTREAM_COMMIT, "stages": {}}
     try:
         set_seed(42)
